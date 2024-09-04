@@ -1,3 +1,25 @@
-[gd_scene format=3 uid="uid://c0atf75bwaldk"]
+[gd_scene load_steps=4 format=3 uid="uid://c0atf75bwaldk"]
+
+[ext_resource type="Script" path="res://character_body_2d.gd" id="1_f7fnd"]
+[ext_resource type="Texture2D" uid="uid://bjaqacy5f7gx2" path="res://icon.svg" id="2_jiwjl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xii61"]
+size = Vector2(127, 128)
 
 [node name="Player" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+motion_mode = 1
+script = ExtResource("1_f7fnd")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D"]
+remote_path = NodePath("../PlayerCam")
+
+[node name="PlayerCam" type="Camera2D" parent="CharacterBody2D"]
+zoom = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("2_jiwjl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_xii61")
