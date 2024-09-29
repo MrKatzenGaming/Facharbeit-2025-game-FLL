@@ -1,15 +1,12 @@
 extends CharacterBody2D
 
 
-const SPEED = 500.0
+const SPEED = 1000.0
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 
 			
-	#print("Wall: ",is_on_wall())
-	#print("Floor: ",is_on_floor())
-	#print("Ceil: ",is_on_ceiling())
 	# Handle jump.
 	var dirud := Input.get_axis("ctrl_up", "ctrl_down")
 	if dirud:
@@ -23,6 +20,5 @@ func _physics_process(delta: float) -> void:
 		velocity.x = dirlr * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-	
 		
 	move_and_slide()
