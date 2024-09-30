@@ -8,16 +8,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if hiddenc == true:
-		hide()
-		set_physics_process(false)
-		
+	pass
 
-
-func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Player"):
-		hiddenc = false
-		
-
-	
-	
+func _on_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Flash"):
+		get_parent().hide()
+		get_parent().set_process(false)
+		set_process(false)
