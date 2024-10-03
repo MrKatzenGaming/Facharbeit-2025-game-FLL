@@ -1,10 +1,17 @@
 extends CharacterBody2D
 
 
-const SPEED = 1000.0
-var showtimer = 0
+const SPEED = 500.0
+var flashtime = 0
 
 func _physics_process(_delta: float) -> void:
+
+	check_movement()
+	check_flash()
+	
+	move_and_slide()
+
+func check_movement() -> void:
 	# Get the input direction and handle the movement/deceleration
 	# Handle Up-Down Movement
 	var dirud := Input.get_axis("ctrl_up", "ctrl_down")
@@ -19,16 +26,15 @@ func _physics_process(_delta: float) -> void:
 		velocity.x = dirlr * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		
-	move_and_slide()
-	
+
+func check_flash() -> void:
 	if Input.is_action_just_pressed("ctrl_flash"):
-		showtimer = 10
+		flashtime = 10
 	
-	if showtimer == 0:
+	if flashtime == 0:
 		$Flash/FlashArea.process_mode = Node.PROCESS_MODE_DISABLED
 		$Flash/FlashArea.hide()
 	else:
-		showtimer -= 1
+		flashtime -= 1
 		$Flash/FlashArea.process_mode = Node.PROCESS_MODE_ALWAYS
 		$Flash/FlashArea.show()
