@@ -22,6 +22,14 @@ size = Vector2(128, 128)
 motion_mode = 1
 script = ExtResource("1_f7fnd")
 
+[node name="Label" type="Label" parent="CharacterBody2D"]
+offset_left = -399.0
+offset_top = -225.0
+offset_right = -257.0
+offset_bottom = -187.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Score: "
+
 [node name="PlayerShine" type="PointLight2D" parent="CharacterBody2D"]
 position = Vector2(0, -3.50177e-07)
 scale = Vector2(7, 7)

@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpo6nyqj26pf8"]
+[gd_scene load_steps=7 format=3 uid="uid://cpo6nyqj26pf8"]
 
 [ext_resource type="PackedScene" uid="uid://c0atf75bwaldk" path="res://player.tscn" id="1_ut43h"]
-[ext_resource type="PackedScene" uid="uid://b7nxsaece46sx" path="res://object.tscn" id="2_uy0i2"]
+[ext_resource type="PackedScene" uid="uid://b7nxsaece46sx" path="res://Layer0Obj.tscn" id="2_uy0i2"]
+[ext_resource type="PackedScene" uid="uid://cwwhncbhi7tj4" path="res://Layer1Obj.tscn" id="3_dnsvw"]
+[ext_resource type="PackedScene" uid="uid://c6t4uu4h873ph" path="res://Layer2Obj.tscn" id="4_va4de"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v5l6r"]
 size = Vector2(20, 960.125)
@@ -12,6 +14,7 @@ size = Vector2(884, 20)
 [node name="Main" type="Node2D"]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -52,9 +55,6 @@ offset_right = 1120.0
 offset_bottom = 147.0
 color = Color(1, 0, 1, 1)
 
-[node name="Object" parent="." instance=ExtResource("2_uy0i2")]
-position = Vector2(389, 444)
-
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("1_ut43h")]
 position = Vector2(436, 251)
 
@@ -76,3 +76,18 @@ shape = SubResource("RectangleShape2D_qj0ml")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
 position = Vector2(-46, -394.875)
 shape = SubResource("RectangleShape2D_v5l6r")
+
+[node name="ObjLayer0" type="Node2D" parent="."]
+
+[node name="Layer0Obj" parent="ObjLayer0" instance=ExtResource("2_uy0i2")]
+position = Vector2(548, 695)
+
+[node name="ObjLayer1" type="Node2D" parent="."]
+
+[node name="Layer1Obj" parent="ObjLayer1" instance=ExtResource("3_dnsvw")]
+position = Vector2(314, 695)
+
+[node name="ObjLayer2" type="Node2D" parent="."]
+
+[node name="Layer2Obj" parent="ObjLayer2" instance=ExtResource("4_va4de")]
+position = Vector2(91, 696)

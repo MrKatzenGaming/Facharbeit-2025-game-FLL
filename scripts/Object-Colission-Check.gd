@@ -1,17 +1,21 @@
 extends Area2D
 
-var hiddenc = false
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
 
 func _on_area_entered(area: Area2D) -> void:
-	if area.is_in_group("Flash"):
-		get_parent().hide()
-		get_parent().set_process(false)
-		set_process(false)
+	if area.is_in_group("Flash") && process_mode != Node.PROCESS_MODE_DISABLED:
+		
+		var parent = get_parent()
+		
+		parent.hide()
+		parent.process_mode = Node.PROCESS_MODE_DISABLED
+		process_mode = Node.PROCESS_MODE_DISABLED
+		
+		if parent.is_in_group("Layer0"):
+			PlayerVariables.Score += 10
+		elif parent.is_in_group("Layer1"):
+			PlayerVariables.Score += 20
+		elif parent.is_in_group("Layer2"):
+			PlayerVariables.Score += 30
+		
+		
