@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://cpo6nyqj26pf8"]
 
-[ext_resource type="PackedScene" uid="uid://c0atf75bwaldk" path="res://player.tscn" id="1_ut43h"]
-[ext_resource type="PackedScene" uid="uid://b7nxsaece46sx" path="res://Layer0Obj.tscn" id="2_uy0i2"]
-[ext_resource type="PackedScene" uid="uid://cwwhncbhi7tj4" path="res://Layer1Obj.tscn" id="3_dnsvw"]
-[ext_resource type="PackedScene" uid="uid://c6t4uu4h873ph" path="res://Layer2Obj.tscn" id="4_va4de"]
+[ext_resource type="PackedScene" uid="uid://c0atf75bwaldk" path="res://Scenes/player.tscn" id="1_ft177"]
+[ext_resource type="PackedScene" uid="uid://b7nxsaece46sx" path="res://Scenes/Objects/Layer0Obj.tscn" id="2_6i1xt"]
+[ext_resource type="PackedScene" uid="uid://cwwhncbhi7tj4" path="res://Scenes/Objects/Layer1Obj.tscn" id="3_wh2fh"]
+[ext_resource type="PackedScene" uid="uid://c6t4uu4h873ph" path="res://Scenes/Objects/Layer2Obj.tscn" id="4_c7j30"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v5l6r"]
 size = Vector2(20, 960.125)
@@ -55,7 +55,7 @@ offset_right = 1120.0
 offset_bottom = 147.0
 color = Color(1, 0, 1, 1)
 
-[node name="Player" parent="." groups=["Player"] instance=ExtResource("1_ut43h")]
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("1_ft177")]
 position = Vector2(436, 251)
 
 [node name="Walls" type="StaticBody2D" parent="."]
@@ -79,15 +79,15 @@ shape = SubResource("RectangleShape2D_v5l6r")
 
 [node name="ObjLayer0" type="Node2D" parent="."]
 
-[node name="Layer0Obj" parent="ObjLayer0" instance=ExtResource("2_uy0i2")]
+[node name="Layer0Obj" parent="ObjLayer0" instance=ExtResource("2_6i1xt")]
 position = Vector2(548, 695)
 
 [node name="ObjLayer1" type="Node2D" parent="."]
 
-[node name="Layer1Obj" parent="ObjLayer1" instance=ExtResource("3_dnsvw")]
+[node name="Layer1Obj" parent="ObjLayer1" instance=ExtResource("3_wh2fh")]
 position = Vector2(314, 695)
 
 [node name="ObjLayer2" type="Node2D" parent="."]
 
-[node name="Layer2Obj" parent="ObjLayer2" instance=ExtResource("4_va4de")]
+[node name="Layer2Obj" parent="ObjLayer2" instance=ExtResource("4_c7j30")]
 position = Vector2(91, 696)
