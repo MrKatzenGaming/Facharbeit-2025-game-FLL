@@ -10,11 +10,11 @@ func _on_area_entered(area: Area2D) -> void:
 		call_deferred("disable_node",parent)
 		
 		if parent.is_in_group("Layer0"):
-			PlayerVariables.add_Score(10)
+			PlayerVariables.add_score(10)
 		elif parent.is_in_group("Layer1"):
-			PlayerVariables.add_Score(20)
+			PlayerVariables.add_score(20)
 		elif parent.is_in_group("Layer2"):
-			PlayerVariables.add_Score(30)
+			PlayerVariables.add_score(30)
 
 func disable_node(parent:Node) -> void:
 		parent.hide()
