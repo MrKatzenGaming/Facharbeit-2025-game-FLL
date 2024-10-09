@@ -1,18 +1,18 @@
 extends CharacterBody2D
 
 
-const SPEED = 500.0
-var FlashTime = 0
+const SPEED:float = 500.0
+var FlashTime:int = 0
 
-var NodeLayer0
-var NodeLayer1
-var NodeLayer2
+@onready var NodeLayer0:Node2D = get_tree().get_root().get_node("Main").get_node("ObjLayer0")
+@onready var NodeLayer1:Node2D = get_tree().get_root().get_node("Main").get_node("ObjLayer1")
+@onready var NodeLayer2:Node2D = get_tree().get_root().get_node("Main").get_node("ObjLayer2")
+@onready var pause_menu:Control = $"PauseMenu"
+
+var paused:bool = false
 
 func _ready() -> void:
-	NodeLayer0 = get_tree().get_root().get_node("Main").get_node("ObjLayer0")
-	NodeLayer1 = get_tree().get_root().get_node("Main").get_node("ObjLayer1")
-	NodeLayer2 = get_tree().get_root().get_node("Main").get_node("ObjLayer2")
-	
+
 	NodeLayer0.show()
 	NodeLayer0.process_mode = Node.PROCESS_MODE_ALWAYS
 	
@@ -34,6 +34,9 @@ func _physics_process(_delta: float) -> void:
 		$Label.text = "Score: " + str(PlayerVariables.Score) + "\nLayer: " + str(PlayerVariables.Layer)
 	else:
 		$Label.text = "Score: " + str(PlayerVariables.Score)
+		
+	if Input.is_action_just_pressed("ctrl_pause"):
+		pause_menu.pauseMenu()
 	
 	if Input.is_action_just_pressed("ctrl_layer_up"):
 		changeLayer(0)

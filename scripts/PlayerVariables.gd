@@ -1,9 +1,9 @@
 extends Node
 
-var Debug = false
-var Layer = 0
+var Debug:bool = false
+var Layer:int = 0
 
-var Score = 0
+var Score:int = 0
 
 
 func add_score(score:int) -> void:

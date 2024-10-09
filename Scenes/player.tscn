@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://c0atf75bwaldk"]
+[gd_scene load_steps=8 format=3 uid="uid://c0atf75bwaldk"]
 
-[ext_resource type="Script" path="res://scripts/character_body_2d.gd" id="1_f7fnd"]
+[ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_f7fnd"]
 [ext_resource type="Texture2D" uid="uid://bjaqacy5f7gx2" path="res://icon.svg" id="2_jiwjl"]
-[ext_resource type="Script" path="res://scripts/flash_area.gd" id="3_bqnhc"]
+[ext_resource type="Script" path="res://Scripts/flash_area.gd" id="3_bqnhc"]
+[ext_resource type="PackedScene" uid="uid://b6lost08g1cg3" path="res://Scenes/pause_menu.tscn" id="4_76sq4"]
 
 [sub_resource type="Gradient" id="Gradient_pouoi"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -67,3 +68,16 @@ texture = ExtResource("2_jiwjl")
 
 [node name="PlayerHitbox" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("RectangleShape2D_xii61")
+
+[node name="PauseMenu" parent="CharacterBody2D" instance=ExtResource("4_76sq4")]
+process_mode = 2
+visible = false
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -35.0
+offset_top = -32.0
+offset_right = 35.0
+offset_bottom = 31.0
+grow_horizontal = 1
+grow_vertical = 1
