@@ -9,6 +9,9 @@ var FlashTime:int = 0
 @onready var NodeLayer2:Node2D = get_tree().get_root().get_node("Main").get_node("ObjLayer2")
 @onready var pause_menu:Control = $"PauseMenu"
 
+@onready var color_rect_2: ColorRect = get_tree().get_root().get_node("Main").get_node("ColorRect2")
+@onready var canvas_modulate: CanvasModulate = get_tree().get_root().get_node("Main").get_node("CanvasModulate")
+
 var paused:bool = false
 
 func _ready() -> void:
@@ -63,10 +66,14 @@ func check_flash() -> void:
 	if FlashTime == 0:
 		$Flash/FlashArea.process_mode = Node.PROCESS_MODE_DISABLED
 		$Flash/FlashArea.hide()
+		color_rect_2.hide()
+		canvas_modulate.show()
 	else:
 		FlashTime -= 1
 		$Flash/FlashArea.process_mode = Node.PROCESS_MODE_ALWAYS
 		$Flash/FlashArea.show()
+		color_rect_2.show()
+		canvas_modulate.hide()
 
 func changeLayer(dir: int) -> void:
 	if dir == 1 && PlayerVariables.Layer < 2:
