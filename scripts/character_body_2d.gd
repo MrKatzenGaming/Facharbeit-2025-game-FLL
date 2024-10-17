@@ -67,7 +67,7 @@ func check_flash() -> void:
 		$Flash/FlashArea.process_mode = Node.PROCESS_MODE_DISABLED
 		$Flash/FlashArea.hide()
 		color_rect_2.hide()
-		canvas_modulate.show()
+		#canvas_modulate.show()
 	else:
 		FlashTime -= 1
 		$Flash/FlashArea.process_mode = Node.PROCESS_MODE_ALWAYS

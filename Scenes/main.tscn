@@ -16,6 +16,7 @@ size = Vector2(884, 20)
 script = ExtResource("1_tye50")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -94,6 +95,7 @@ position = Vector2(314, 695)
 position = Vector2(91, 696)
 
 [node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
 offset_left = -1794.0
 offset_top = -1224.0
 offset_right = 2543.0
