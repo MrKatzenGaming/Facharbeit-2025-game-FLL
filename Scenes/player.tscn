@@ -2,14 +2,21 @@
 
 [ext_resource type="Script" path="res://scripts/character_body_2d.gd" id="1_f7fnd"]
 [ext_resource type="Texture2D" uid="uid://bjaqacy5f7gx2" path="res://icon.svg" id="2_jiwjl"]
+<<<<<<< HEAD
 [ext_resource type="Script" path="res://scripts/flash_area.gd" id="3_bqnhc"]
 [ext_resource type="PackedScene" uid="uid://b6lost08g1cg3" path="res://scenes/pause_menu.tscn" id="4_76sq4"]
+=======
+[ext_resource type="PackedScene" path="res://Scenes/pause_menu.tscn" id="4_76sq4"]
+[ext_resource type="Script" path="res://scripts/LookAtCursor.gd" id="4_uror3"]
+>>>>>>> 7b2da0145851f48065b8384c1196391463367bb0
 
 [sub_resource type="Gradient" id="Gradient_pouoi"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_o3i6s"]
 gradient = SubResource("Gradient_pouoi")
+width = 50
+height = 50
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 0)
@@ -29,15 +36,15 @@ offset_top = -225.0
 offset_right = -257.0
 offset_bottom = -187.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Score: "
 
 [node name="PlayerShine" type="PointLight2D" parent="CharacterBody2D"]
+visible = false
 position = Vector2(0, -3.50177e-07)
 scale = Vector2(7, 7)
 texture = SubResource("GradientTexture2D_o3i6s")
 
 [node name="Flash" type="Node2D" parent="CharacterBody2D"]
-script = ExtResource("3_bqnhc")
+script = ExtResource("4_uror3")
 
 [node name="Polygon2D" type="Polygon2D" parent="CharacterBody2D/Flash"]
 rotation = 1.5708
@@ -45,17 +52,18 @@ scale = Vector2(1.7, 1.7)
 color = Color(1, 0, 0, 0.639216)
 polygon = PackedVector2Array(-100, -150, 100, -150, 0, 0)
 
+[node name="FlashLight" type="PointLight2D" parent="CharacterBody2D/Flash"]
+position = Vector2(186, 2.41562e-08)
+rotation = 1.5708
+scale = Vector2(7, 7)
+texture = SubResource("GradientTexture2D_o3i6s")
+
 [node name="FlashArea" type="Area2D" parent="CharacterBody2D/Flash" groups=["Flash"]]
 rotation = 1.5708
 
 [node name="FlashColission" type="CollisionPolygon2D" parent="CharacterBody2D/Flash/FlashArea"]
 scale = Vector2(1.7, 1.7)
 polygon = PackedVector2Array(0, 0, -100, -150, 100, -150)
-
-[node name="FlashLight" type="PointLight2D" parent="CharacterBody2D/Flash/FlashArea"]
-position = Vector2(-0.000673294, -186)
-scale = Vector2(7, 7)
-texture = SubResource("GradientTexture2D_o3i6s")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D"]
 remote_path = NodePath("../PlayerCam")

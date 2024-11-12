@@ -93,3 +93,10 @@ position = Vector2(314, 695)
 
 [node name="Layer2Obj" parent="ObjLayer2" instance=ExtResource("4_c7j30")]
 position = Vector2(91, 696)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
+offset_left = -1794.0
+offset_top = -1224.0
+offset_right = 2543.0
+offset_bottom = 1657.0
