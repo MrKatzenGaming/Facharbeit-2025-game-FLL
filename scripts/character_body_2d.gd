@@ -61,6 +61,8 @@ func check_movement() -> void:
 
 func check_flash() -> void:
 	if Input.is_action_just_pressed("ctrl_flash"):
+		$PlayerCam.screenshot()
+		await RenderingServer.frame_post_draw
 		FlashTime = 10
 	
 	if FlashTime == 0:
