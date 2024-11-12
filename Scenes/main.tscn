@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://cpo6nyqj26pf8"]
 
-[ext_resource type="PackedScene" uid="uid://c0atf75bwaldk" path="res://Scenes/player.tscn" id="1_ft177"]
-[ext_resource type="Script" path="res://Scripts/main.gd" id="1_tye50"]
-[ext_resource type="PackedScene" uid="uid://b7nxsaece46sx" path="res://Scenes/Objects/Layer0Obj.tscn" id="2_6i1xt"]
-[ext_resource type="PackedScene" uid="uid://cwwhncbhi7tj4" path="res://Scenes/Objects/Layer1Obj.tscn" id="3_wh2fh"]
-[ext_resource type="PackedScene" uid="uid://c6t4uu4h873ph" path="res://Scenes/Objects/Layer2Obj.tscn" id="4_c7j30"]
+[ext_resource type="PackedScene" uid="uid://c0atf75bwaldk" path="res://scenes/player.tscn" id="1_ft177"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_tye50"]
+[ext_resource type="PackedScene" uid="uid://b7nxsaece46sx" path="res://scenes/objects/Layer0Obj.tscn" id="2_6i1xt"]
+[ext_resource type="PackedScene" uid="uid://cwwhncbhi7tj4" path="res://scenes/objects/Layer1Obj.tscn" id="3_wh2fh"]
+[ext_resource type="PackedScene" uid="uid://c6t4uu4h873ph" path="res://scenes/objects/Layer2Obj.tscn" id="4_c7j30"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v5l6r"]
 size = Vector2(20, 960.125)

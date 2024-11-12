@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b7nxsaece46sx"]
 
 [ext_resource type="Texture2D" uid="uid://bjaqacy5f7gx2" path="res://icon.svg" id="1_o7tdn"]
-[ext_resource type="Script" path="res://Scripts/Object-Colission-Check.gd" id="2_qk7kn"]
+[ext_resource type="Script" path="res://scripts/Object-Colission-Check.gd" id="2_qk7kn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uj46r"]
 size = Vector2(193, 129)

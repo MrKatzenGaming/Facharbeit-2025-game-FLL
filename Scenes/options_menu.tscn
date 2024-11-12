@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://0u8col215uil"]
 
-[ext_resource type="Script" path="res://Scripts/options_menu.gd" id="1_h5q4o"]
-[ext_resource type="AudioStream" uid="uid://b0r8jcq3wyp1u" path="res://Scenes/music.mp3" id="2_cgx4x"]
+[ext_resource type="Script" path="res://scripts/options_menu.gd" id="1_h5q4o"]
+[ext_resource type="AudioStream" uid="uid://b0r8jcq3wyp1u" path="res://scenes/music.mp3" id="2_cgx4x"]
 
 [node name="OptionsMenu" type="Control"]
 layout_mode = 3
