@@ -38,3 +38,9 @@ func _load_audio_settings():
 	var audio_settings = ConfigFileHandler.load_audio_settings()
 	volume_slider.value = audio_settings.Volume
 	mute_checkbox.button_pressed = audio_settings.Muted
+
+
+func _on_clear_screenshots_pressed() -> void:
+	var dir = DirAccess.open("user://Screenshots")
+	for n in dir.get_files():
+		dir.remove(n)
