@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://cpo6nyqj26pf8"]
 
-[ext_resource type="PackedScene" uid="uid://c0atf75bwaldk" path="res://scenes/player.tscn" id="1_ft177"]
+[ext_resource type="PackedScene" uid="uid://c0atf75bwaldk" path="res://Scenes/player.tscn" id="1_ft177"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_tye50"]
-[ext_resource type="PackedScene" uid="uid://b7nxsaece46sx" path="res://scenes/objects/Layer0Obj.tscn" id="2_6i1xt"]
-[ext_resource type="PackedScene" uid="uid://cwwhncbhi7tj4" path="res://scenes/objects/Layer1Obj.tscn" id="3_wh2fh"]
-[ext_resource type="PackedScene" uid="uid://c6t4uu4h873ph" path="res://scenes/objects/Layer2Obj.tscn" id="4_c7j30"]
+[ext_resource type="PackedScene" uid="uid://b7nxsaece46sx" path="res://Scenes/Objects/Layer0Obj.tscn" id="2_6i1xt"]
+[ext_resource type="PackedScene" uid="uid://cwwhncbhi7tj4" path="res://Scenes/Objects/Layer1Obj.tscn" id="3_wh2fh"]
+[ext_resource type="PackedScene" uid="uid://c6t4uu4h873ph" path="res://Scenes/Objects/Layer2Obj.tscn" id="4_c7j30"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v5l6r"]
 size = Vector2(20, 960.125)
@@ -25,37 +25,37 @@ offset_top = -612.0
 offset_right = 1829.0
 offset_bottom = 1353.0
 
+[node name="ColorRect4" type="ColorRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 1698.0
+offset_top = 491.0
+offset_right = 1861.0
+offset_bottom = 1561.0
+color = Color(0.309804, 0.309804, 0.309804, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 734.0
+offset_top = 456.0
+offset_right = 897.0
+offset_bottom = 1596.0
+color = Color(0.31, 0.31, 0.31, 1)
+
 [node name="ColorRect" type="ColorRect" parent="ColorRect"]
 layout_mode = 0
-offset_left = 1701.0
-offset_top = 461.0
-offset_right = 1864.0
-offset_bottom = 614.0
-color = Color(1, 0, 1, 1)
+offset_left = 730.0
+offset_top = 459.0
+offset_right = 1861.0
+offset_bottom = 612.0
+color = Color(0.309804, 0.309804, 0.309804, 1)
 
-[node name="ColorRect" type="ColorRect" parent="ColorRect/ColorRect"]
+[node name="ColorRect3" type="ColorRect" parent="ColorRect"]
 layout_mode = 0
-offset_left = -962.0
-offset_top = -5.0
-offset_right = -799.0
-offset_bottom = 148.0
-color = Color(1, 0, 1, 1)
-
-[node name="ColorRect" type="ColorRect" parent="ColorRect/ColorRect/ColorRect"]
-layout_mode = 0
-offset_left = 1.0
-offset_top = 958.0
-offset_right = 164.0
-offset_bottom = 1111.0
-color = Color(1, 0, 1, 1)
-
-[node name="ColorRect" type="ColorRect" parent="ColorRect/ColorRect/ColorRect/ColorRect"]
-layout_mode = 0
-offset_left = 957.0
-offset_top = -6.0
-offset_right = 1120.0
-offset_bottom = 147.0
-color = Color(1, 0, 1, 1)
+offset_left = 737.0
+offset_top = 1412.0
+offset_right = 1887.0
+offset_bottom = 1565.0
+color = Color(0.309804, 0.309804, 0.309804, 1)
 
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("1_ft177")]
 position = Vector2(436, 251)

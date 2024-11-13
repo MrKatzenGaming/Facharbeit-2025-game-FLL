@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://w22db4ycfjm1"]
+[gd_scene load_steps=2 format=3 uid="uid://w22db4ycfjm1"]
 
 [ext_resource type="Script" path="res://scripts/options_menu.gd" id="1_h5q4o"]
-[ext_resource type="AudioStream" uid="uid://b0r8jcq3wyp1u" path="res://scenes/music.mp3" id="2_cgx4x"]
 
 [node name="OptionsMenu" type="Control"]
 layout_mode = 3
@@ -69,10 +68,8 @@ text = "Back"
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(273, 380)
-stream = ExtResource("2_cgx4x")
 volume_db = 10.636
 autoplay = true
-parameters/looping = false
 
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/Mute" to="." method="_on_mute_toggled"]
