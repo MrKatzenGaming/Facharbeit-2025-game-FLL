@@ -1,13 +1,13 @@
 [gd_scene load_steps=8 format=3 uid="uid://cpo6nyqj26pf8"]
 
-[ext_resource type="PackedScene" uid="uid://c0atf75bwaldk" path="res://Scenes/player.tscn" id="1_ft177"]
+[ext_resource type="PackedScene" uid="uid://c0atf75bwaldk" path="res://scenes/player.tscn" id="1_ft177"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_tye50"]
-[ext_resource type="PackedScene" uid="uid://b7nxsaece46sx" path="res://Scenes/Objects/Layer0Obj.tscn" id="2_6i1xt"]
-[ext_resource type="PackedScene" uid="uid://cwwhncbhi7tj4" path="res://Scenes/Objects/Layer1Obj.tscn" id="3_wh2fh"]
-[ext_resource type="PackedScene" uid="uid://c6t4uu4h873ph" path="res://Scenes/Objects/Layer2Obj.tscn" id="4_c7j30"]
+[ext_resource type="PackedScene" uid="uid://b7nxsaece46sx" path="res://scenes/objects/Layer0Obj.tscn" id="2_6i1xt"]
+[ext_resource type="PackedScene" uid="uid://cwwhncbhi7tj4" path="res://scenes/objects/Layer1Obj.tscn" id="3_wh2fh"]
+[ext_resource type="PackedScene" uid="uid://c6t4uu4h873ph" path="res://scenes/objects/Layer2Obj.tscn" id="4_c7j30"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v5l6r"]
-size = Vector2(20, 960.125)
+size = Vector2(20, 1428)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qj0ml"]
 size = Vector2(884, 20)
@@ -19,64 +19,60 @@ script = ExtResource("1_tye50")
 visible = false
 color = Color(0, 0, 0, 1)
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="."]
 offset_left = -897.0
 offset_top = -612.0
 offset_right = 1829.0
 offset_bottom = 1353.0
+color = Color(0, 0, 1, 1)
 
-[node name="ColorRect4" type="ColorRect" parent="ColorRect"]
-layout_mode = 0
-offset_left = 1698.0
-offset_top = 491.0
-offset_right = 1861.0
-offset_bottom = 1561.0
+[node name="WallTop" type="ColorRect" parent="."]
+offset_left = -167.0
+offset_right = 964.0
+offset_bottom = 153.0
 color = Color(0.309804, 0.309804, 0.309804, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="ColorRect"]
-layout_mode = 0
-offset_left = 734.0
-offset_top = 456.0
-offset_right = 897.0
-offset_bottom = 1596.0
+[node name="WallBottom" type="ColorRect" parent="."]
+offset_left = -160.0
+offset_top = 888.0
+offset_right = 990.0
+offset_bottom = 1041.0
+color = Color(0.309804, 0.309804, 0.309804, 1)
+
+[node name="WallLeft" type="ColorRect" parent="."]
+offset_left = -163.0
+offset_top = -607.0
+offset_bottom = 984.0
 color = Color(0.31, 0.31, 0.31, 1)
 
-[node name="ColorRect" type="ColorRect" parent="ColorRect"]
-layout_mode = 0
-offset_left = 730.0
-offset_top = 459.0
-offset_right = 1861.0
-offset_bottom = 612.0
-color = Color(0.309804, 0.309804, 0.309804, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="ColorRect"]
-layout_mode = 0
-offset_left = 737.0
-offset_top = 1412.0
-offset_right = 1887.0
-offset_bottom = 1565.0
+[node name="WallRight" type="ColorRect" parent="."]
+offset_left = 801.0
+offset_top = -592.0
+offset_right = 964.0
+offset_bottom = 949.0
 color = Color(0.309804, 0.309804, 0.309804, 1)
 
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("1_ft177")]
-position = Vector2(436, 251)
+position = Vector2(431, 217)
 
 [node name="Walls" type="StaticBody2D" parent="."]
 position = Vector2(36, 788)
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
-position = Vector2(775, -342.938)
+position = Vector2(775, -577.938)
 shape = SubResource("RectangleShape2D_v5l6r")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
-position = Vector2(373, -798)
+position = Vector2(382, -645)
 shape = SubResource("RectangleShape2D_qj0ml")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls"]
-position = Vector2(356, 22)
+position = Vector2(356, 110)
 shape = SubResource("RectangleShape2D_qj0ml")
+disabled = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
-position = Vector2(-46, -394.875)
+position = Vector2(-46, -568)
 shape = SubResource("RectangleShape2D_v5l6r")
 
 [node name="ObjLayer0" type="Node2D" parent="."]
