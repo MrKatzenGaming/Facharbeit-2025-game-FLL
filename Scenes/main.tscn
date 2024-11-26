@@ -1,10 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cpo6nyqj26pf8"]
+[gd_scene load_steps=6 format=3 uid="uid://cpo6nyqj26pf8"]
 
 [ext_resource type="PackedScene" uid="uid://c0atf75bwaldk" path="res://scenes/player.tscn" id="1_ft177"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_tye50"]
-[ext_resource type="PackedScene" uid="uid://b7nxsaece46sx" path="res://scenes/objects/Layer0Obj.tscn" id="2_6i1xt"]
-[ext_resource type="PackedScene" uid="uid://cwwhncbhi7tj4" path="res://scenes/objects/Layer1Obj.tscn" id="3_wh2fh"]
-[ext_resource type="PackedScene" uid="uid://c6t4uu4h873ph" path="res://scenes/objects/Layer2Obj.tscn" id="4_c7j30"]
+[ext_resource type="PackedScene" uid="uid://b7nxsaece46sx" path="res://scenes/Object.tscn" id="2_6i1xt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v5l6r"]
 size = Vector2(20, 1428)
@@ -53,7 +51,7 @@ offset_bottom = 949.0
 color = Color(0.309804, 0.309804, 0.309804, 1)
 
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("1_ft177")]
-position = Vector2(431, 217)
+position = Vector2(428, 282)
 
 [node name="Walls" type="StaticBody2D" parent="."]
 position = Vector2(36, 788)
@@ -75,20 +73,8 @@ disabled = true
 position = Vector2(-46, -568)
 shape = SubResource("RectangleShape2D_v5l6r")
 
-[node name="ObjLayer0" type="Node2D" parent="."]
-
-[node name="Layer0Obj" parent="ObjLayer0" instance=ExtResource("2_6i1xt")]
-position = Vector2(548, 695)
-
-[node name="ObjLayer1" type="Node2D" parent="."]
-
-[node name="Layer1Obj" parent="ObjLayer1" instance=ExtResource("3_wh2fh")]
-position = Vector2(314, 695)
-
-[node name="ObjLayer2" type="Node2D" parent="."]
-
-[node name="Layer2Obj" parent="ObjLayer2" instance=ExtResource("4_c7j30")]
-position = Vector2(91, 696)
+[node name="Anglerfisch" parent="Walls" instance=ExtResource("2_6i1xt")]
+position = Vector2(512, -93)
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 visible = false

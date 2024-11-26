@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://c0atf75bwaldk"]
 
 [ext_resource type="Script" path="res://scripts/character_body_2d.gd" id="1_f7fnd"]
-[ext_resource type="Texture2D" uid="uid://bjaqacy5f7gx2" path="res://icon.svg" id="2_jiwjl"]
 [ext_resource type="Script" path="res://scripts/player_cam.gd" id="3_nufpk"]
-[ext_resource type="PackedScene" uid="uid://b6lost08g1cg3" path="res://Scenes/pause_menu.tscn" id="4_76sq4"]
+[ext_resource type="Texture2D" uid="uid://qmosxmdriwm7" path="res://art/sprites/Uboot.png" id="4_3aplo"]
+[ext_resource type="PackedScene" uid="uid://b6lost08g1cg3" path="res://scenes/pause_menu.tscn" id="4_76sq4"]
 [ext_resource type="Script" path="res://scripts/LookAtCursor.gd" id="4_uror3"]
 
 [sub_resource type="Gradient" id="Gradient_pouoi"]
@@ -18,7 +18,7 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.5, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xii61"]
-size = Vector2(128, 128)
+size = Vector2(275, 199.5)
 
 [node name="Player" type="Node2D"]
 
@@ -69,9 +69,11 @@ zoom = Vector2(2, 2)
 script = ExtResource("3_nufpk")
 
 [node name="PlayerSprite" type="Sprite2D" parent="CharacterBody2D"]
-texture = ExtResource("2_jiwjl")
+position = Vector2(-68, -28)
+texture = ExtResource("4_3aplo")
 
 [node name="PlayerHitbox" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-79, -33.25)
 shape = SubResource("RectangleShape2D_xii61")
 
 [node name="PauseMenu" parent="CharacterBody2D" instance=ExtResource("4_76sq4")]
