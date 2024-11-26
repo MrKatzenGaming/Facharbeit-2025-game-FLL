@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c0atf75bwaldk" path="res://scenes/player.tscn" id="1_ft177"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_tye50"]
-[ext_resource type="PackedScene" uid="uid://b7nxsaece46sx" path="res://scenes/Object.tscn" id="2_6i1xt"]
+[ext_resource type="PackedScene" uid="uid://bdbxhaox6ucy1" path="res://scenes/Object.tscn" id="3_4b4uf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v5l6r"]
 size = Vector2(20, 1428)
@@ -73,12 +73,12 @@ disabled = true
 position = Vector2(-46, -568)
 shape = SubResource("RectangleShape2D_v5l6r")
 
-[node name="Anglerfisch" parent="Walls" instance=ExtResource("2_6i1xt")]
-position = Vector2(512, -93)
-
 [node name="ColorRect2" type="ColorRect" parent="."]
 visible = false
 offset_left = -1794.0
 offset_top = -1224.0
 offset_right = 2543.0
 offset_bottom = 1657.0
+
+[node name="Layer0Obj" parent="." instance=ExtResource("3_4b4uf")]
+position = Vector2(518, 775)

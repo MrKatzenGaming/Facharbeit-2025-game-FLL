@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/character_body_2d.gd" id="1_f7fnd"]
 [ext_resource type="Script" path="res://scripts/player_cam.gd" id="3_nufpk"]
-[ext_resource type="Texture2D" uid="uid://qmosxmdriwm7" path="res://art/sprites/Uboot.png" id="4_3aplo"]
 [ext_resource type="PackedScene" uid="uid://b6lost08g1cg3" path="res://scenes/pause_menu.tscn" id="4_76sq4"]
+[ext_resource type="Texture2D" uid="uid://qmosxmdriwm7" path="res://art/sprites/Uboot.png" id="4_kwr26"]
 [ext_resource type="Script" path="res://scripts/LookAtCursor.gd" id="4_uror3"]
 
 [sub_resource type="Gradient" id="Gradient_pouoi"]
@@ -70,7 +70,7 @@ script = ExtResource("3_nufpk")
 
 [node name="PlayerSprite" type="Sprite2D" parent="CharacterBody2D"]
 position = Vector2(-68, -28)
-texture = ExtResource("4_3aplo")
+texture = ExtResource("4_kwr26")
 
 [node name="PlayerHitbox" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(-79, -33.25)
