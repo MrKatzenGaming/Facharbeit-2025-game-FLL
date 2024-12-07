@@ -8,6 +8,7 @@ var FlashTime:int = 0
 
 @onready var color_rect_2: ColorRect = get_tree().get_root().get_node("Main").get_node("ColorRect2")
 @onready var canvas_modulate: CanvasModulate = get_tree().get_root().get_node("Main").get_node("CanvasModulate")
+@onready var flash_light: PointLight2D = $Flash/FlashLight
 
 var paused:bool = false
 
@@ -38,23 +39,25 @@ func check_movement() -> void:
 	if direction:
 		velocity = direction * SPEED
 	else:
-		velocity.y = move_toward(velocity.y , 0 , SPEED)
-		velocity.x = move_toward(velocity.x , 0 , SPEED)
+		velocity.y = move_toward(velocity.y , 0 , 20)
+		velocity.x = move_toward(velocity.x , 0 , 20)
 
 func check_flash() -> void:
 	if Input.is_action_just_pressed("ctrl_flash"):
 		$PlayerCam.screenshot()
 		await RenderingServer.frame_post_draw
-		FlashTime = 10
+		FlashTime = 30
 	
 	if FlashTime == 0:
 		$Flash/FlashArea.process_mode = Node.PROCESS_MODE_DISABLED
 		$Flash/FlashArea.hide()
-		color_rect_2.hide()
-		#canvas_modulate.show()
+		#color_rect_2.hide()
+		##canvas_modulate.show()
+		flash_light.energy = 1
 	else:
 		FlashTime -= 1
 		$Flash/FlashArea.process_mode = Node.PROCESS_MODE_ALWAYS
 		$Flash/FlashArea.show()
-		color_rect_2.show()
-		canvas_modulate.hide()
+		#color_rect_2.show()
+		#canvas_modulate.hide()
+		flash_light.energy = 1000

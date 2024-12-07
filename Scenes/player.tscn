@@ -34,8 +34,7 @@ offset_bottom = -187.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="PlayerShine" type="PointLight2D" parent="CharacterBody2D"]
-visible = false
-position = Vector2(0, -3.50177e-07)
+position = Vector2(-59, -2.84217e-14)
 scale = Vector2(7, 7)
 texture = SubResource("GradientTexture2D_o3i6s")
 

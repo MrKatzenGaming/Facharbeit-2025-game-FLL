@@ -21,7 +21,7 @@ color = Color(0, 0, 0, 1)
 offset_left = -897.0
 offset_top = -612.0
 offset_right = 1829.0
-offset_bottom = 1353.0
+offset_bottom = 4792.0
 color = Color(0, 0, 1, 1)
 
 [node name="WallTop" type="ColorRect" parent="."]
@@ -31,10 +31,10 @@ offset_bottom = 153.0
 color = Color(0.309804, 0.309804, 0.309804, 1)
 
 [node name="WallBottom" type="ColorRect" parent="."]
-offset_left = -160.0
-offset_top = 888.0
-offset_right = 990.0
-offset_bottom = 1041.0
+offset_left = -106.0
+offset_top = 4453.0
+offset_right = 1044.0
+offset_bottom = 4606.0
 color = Color(0.309804, 0.309804, 0.309804, 1)
 
 [node name="WallLeft" type="ColorRect" parent="."]
