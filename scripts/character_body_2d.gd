@@ -21,11 +21,6 @@ func _physics_process(_delta: float) -> void:
 	if Input.is_action_pressed("ctrl_layer_down") && Input.is_action_pressed("ctrl_layer_up") && Input.is_action_just_pressed("ctrl_flash"):
 		PlayerVariables.Debug = !PlayerVariables.Debug
 		print("Debug: ", PlayerVariables.Debug)
-	
-	if PlayerVariables.Debug:
-		$Label.text = "Score: " + str(PlayerVariables.Score)
-	else:
-		$Label.text = "Score: " + str(PlayerVariables.Score)
 		
 	if Input.is_action_just_pressed("ctrl_pause"):
 		pause_menu.pauseMenu()
@@ -60,4 +55,4 @@ func check_flash() -> void:
 		$Flash/FlashArea.show()
 		#color_rect_2.show()
 		#canvas_modulate.hide()
-		flash_light.energy = 1000
+		flash_light.energy = 50

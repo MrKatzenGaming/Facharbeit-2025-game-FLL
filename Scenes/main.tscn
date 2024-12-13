@@ -1,8 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://cpo6nyqj26pf8"]
+[gd_scene load_steps=10 format=3 uid="uid://cpo6nyqj26pf8"]
 
 [ext_resource type="PackedScene" uid="uid://c0atf75bwaldk" path="res://scenes/player.tscn" id="1_ft177"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_tye50"]
+[ext_resource type="Texture2D" uid="uid://c2dodl3m5ehyh" path="res://art/sprites/Sky.png" id="2_kvtur"]
+[ext_resource type="Texture2D" uid="uid://bxmpciykgboan" path="res://art/sprites/Floor-Sand.png" id="3_1ibjo"]
 [ext_resource type="PackedScene" uid="uid://bdbxhaox6ucy1" path="res://scenes/Object.tscn" id="3_4b4uf"]
+
+[sub_resource type="Gradient" id="Gradient_h6e7l"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_seari"]
+gradient = SubResource("Gradient_h6e7l")
+width = 100
+height = 100
+fill_from = Vector2(0.5, 1)
+fill_to = Vector2(0.5, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v5l6r"]
 size = Vector2(20, 1428)
@@ -14,12 +25,11 @@ size = Vector2(884, 20)
 script = ExtResource("1_tye50")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="Background" type="ColorRect" parent="."]
 offset_left = -897.0
-offset_top = -612.0
+offset_top = -25.0
 offset_right = 1829.0
 offset_bottom = 4792.0
 color = Color(0, 0, 1, 1)
@@ -30,12 +40,27 @@ offset_right = 964.0
 offset_bottom = 153.0
 color = Color(0.309804, 0.309804, 0.309804, 1)
 
+[node name="Sprite2D" type="Sprite2D" parent="WallTop"]
+position = Vector2(559, 211)
+texture = ExtResource("2_kvtur")
+
+[node name="PointLight2D" type="PointLight2D" parent="WallTop"]
+position = Vector2(627.5, 482.5)
+scale = Vector2(27.41, 17.01)
+energy = 1.5
+texture = SubResource("GradientTexture2D_seari")
+
 [node name="WallBottom" type="ColorRect" parent="."]
 offset_left = -106.0
 offset_top = 4453.0
 offset_right = 1044.0
 offset_bottom = 4606.0
 color = Color(0.309804, 0.309804, 0.309804, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="WallBottom"]
+position = Vector2(572.75, 26.75)
+scale = Vector2(1.1545, 1.67)
+texture = ExtResource("3_1ibjo")
 
 [node name="WallLeft" type="ColorRect" parent="."]
 offset_left = -163.0

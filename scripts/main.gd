@@ -13,5 +13,5 @@ func _ready() -> void:
 	factor = 1/diff
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	background.color.b = clamp(1 - factor*player.position.y,0.3,1)
