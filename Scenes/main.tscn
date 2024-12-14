@@ -75,9 +75,6 @@ offset_right = 964.0
 offset_bottom = 949.0
 color = Color(0.309804, 0.309804, 0.309804, 1)
 
-[node name="Player" parent="." groups=["Player"] instance=ExtResource("1_ft177")]
-position = Vector2(428, 282)
-
 [node name="Walls" type="StaticBody2D" parent="."]
 position = Vector2(36, 788)
 
@@ -107,3 +104,6 @@ offset_bottom = 1657.0
 
 [node name="Layer0Obj" parent="." instance=ExtResource("3_4b4uf")]
 position = Vector2(518, 775)
+
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("1_ft177")]
+position = Vector2(428, 282)

@@ -1,34 +1,82 @@
-[gd_scene load_steps=4 format=3 uid="uid://wjym08dvo1ir"]
+[gd_scene load_steps=7 format=3 uid="uid://wjym08dvo1ir"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_uwr7c"]
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_tkb3g"]
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_50gdd"]
 light_mode = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_yb85d"]
+font_size = 57
 
 [sub_resource type="LabelSettings" id="LabelSettings_3sc4s"]
 
+[sub_resource type="Gradient" id="Gradient_4drvu"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5tdw6"]
+gradient = SubResource("Gradient_4drvu")
+fill_from = Vector2(0.5, 1)
+fill_to = Vector2(0.5, 0)
+
 [node name="UI" type="Control"]
-material = SubResource("CanvasItemMaterial_tkb3g")
+material = SubResource("CanvasItemMaterial_50gdd")
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -1920.0
+offset_bottom = -1080.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_uwr7c")
 
-[node name="ScoreLabel" type="Label" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 use_parent_material = true
-offset_right = 327.0
-offset_bottom = 23.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Score: 0"
-label_settings = SubResource("LabelSettings_3sc4s")
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 80.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+use_parent_material = true
+offset_top = 80.0
+offset_right = 120.0
+offset_bottom = 1080.0
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+use_parent_material = true
+offset_left = 120.0
+offset_right = 1920.0
+offset_bottom = 80.0
 
 [node name="TimerLabel" type="Label" parent="."]
 use_parent_material = true
 layout_mode = 0
-offset_top = 24.0
-offset_right = 190.0
-offset_bottom = 47.0
-text = "Timer: "
+offset_right = 120.0
+offset_bottom = 80.0
+text = "5:00"
+label_settings = SubResource("LabelSettings_yb85d")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="."]
+use_parent_material = true
+layout_mode = 0
+offset_left = 4.0
+offset_top = -77.0
+offset_right = 331.0
+offset_bottom = -54.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_3sc4s")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+use_parent_material = true
+layout_mode = 0
+offset_left = 19.0
+offset_top = 124.0
+offset_right = 94.0
+offset_bottom = 712.0
+texture = SubResource("GradientTexture2D_5tdw6")

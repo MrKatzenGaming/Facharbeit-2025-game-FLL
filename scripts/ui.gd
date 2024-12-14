@@ -6,7 +6,7 @@ var timer
 var start_time_min = 0.5
 
 func _ready() -> void:
-	timer = get_tree().create_timer(start_time_min*60)
+	timer = get_tree().create_timer(start_time_min*60,false)
 
 func _process(_delta: float) -> void:
 	updateScore()
@@ -20,7 +20,7 @@ func updateTimer() -> void:
 	var timemin:int = int(time/60)
 	var timesec = time-timemin*60
 	
-	timer_label.text = "Timer: " + str(timemin) + ":" + str(timesec)
+	timer_label.text = "" + str(timemin) + ":" + str(timesec)
 	
 	if time == 0:
 		pass # handle no time left logic

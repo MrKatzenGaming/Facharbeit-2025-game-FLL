@@ -4,7 +4,7 @@ extends CharacterBody2D
 const SPEED:float = 500.0
 var FlashTime:int = 0
 
-@onready var pause_menu:Control = $"PauseMenu"
+@onready var pause_menu: Control = $"../PlayerCam/PauseMenu"
 
 @onready var color_rect_2: ColorRect = get_tree().get_root().get_node("Main").get_node("ColorRect2")
 @onready var canvas_modulate: CanvasModulate = get_tree().get_root().get_node("Main").get_node("CanvasModulate")
@@ -23,7 +23,9 @@ func _physics_process(_delta: float) -> void:
 		print("Debug: ", PlayerVariables.Debug)
 		
 	if Input.is_action_just_pressed("ctrl_pause"):
-		pause_menu.pauseMenu()
+		get_tree().paused = 1
+		pause_menu.show()
+		
 	
 	move_and_slide()
 
@@ -39,7 +41,7 @@ func check_movement() -> void:
 
 func check_flash() -> void:
 	if Input.is_action_just_pressed("ctrl_flash"):
-		$PlayerCam.screenshot()
+		$"../PlayerCam".screenshot()
 		await RenderingServer.frame_post_draw
 		FlashTime = 30
 	
