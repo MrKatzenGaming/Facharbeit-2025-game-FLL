@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uj46r"]
 size = Vector2(211, 146)
 
-[node name="Anglerfisch" type="Node2D"]
+[node name="Anglerfisch" type="Node2D" groups=["Obj"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_u3rbl")

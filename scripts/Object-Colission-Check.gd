@@ -17,7 +17,7 @@ func _on_area_entered(area: Area2D) -> void:
 		
 		call_deferred("disable_node",parent)
 			
-		if parent.is_in_group("Layer0"):
+		if parent.is_in_group("Obj"):
 			PlayerVariables.add_score(parent.position.y/100)
 
 func disable_node(parent:Node) -> void:

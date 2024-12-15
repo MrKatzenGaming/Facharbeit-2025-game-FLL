@@ -49,14 +49,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uj46r"]
 size = Vector2(130, 158)
 
-[node name="Qualle" type="Node2D"]
+[node name="Qualle" type="Node2D" groups=["Obj"]]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(8, 22)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_wec4i")
 autoplay = "default"
-frame_progress = 0.17248
+frame_progress = 0.367023
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("3_uuk1v")
