@@ -1,7 +1,14 @@
 extends Area2D
 
-@onready var sprite_2d: Sprite2D = $"../Sprite2D"
-
+var sprite_2d
+var is_animated = false
+func _ready() -> void:
+	if $"../Sprite2D":
+		sprite_2d = $"../Sprite2D"
+		is_animated = false
+	else:
+		sprite_2d = $"../AnimatedSprite2D"
+		is_animated = true
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Flash") && process_mode != Node.PROCESS_MODE_DISABLED:
@@ -17,5 +24,9 @@ func disable_node(parent:Node) -> void:
 		#parent.hide()
 		#parent.process_mode = Node.PROCESS_MODE_DISABLED
 		#process_mode = Node.PROCESS_MODE_DISABLED
-		sprite_2d.modulate.a = 0.25
+		if is_animated:
+			sprite_2d.modulate.a = 0.25
+			sprite_2d.pause()
+		else:
+			sprite_2d.modulate.a = 0.25
 		

@@ -1,0 +1,68 @@
+[gd_scene load_steps=13 format=3 uid="uid://b78ajil6fj2kp"]
+
+[ext_resource type="Texture2D" uid="uid://cfswnjw4kyjru" path="res://art/sprites/Qualle/Qualle000.png" id="1_hl32m"]
+[ext_resource type="Texture2D" uid="uid://cbiq8yrre4wvv" path="res://art/sprites/Qualle/Qualle001.png" id="2_ff3tf"]
+[ext_resource type="Texture2D" uid="uid://c57eq334bcdtm" path="res://art/sprites/Qualle/Qualle002.png" id="3_eslyt"]
+[ext_resource type="Script" path="res://scripts/Object-Colission-Check.gd" id="3_uuk1v"]
+[ext_resource type="Texture2D" uid="uid://biwpq58ywfyuk" path="res://art/sprites/Qualle/Qualle003.png" id="4_0ofry"]
+[ext_resource type="Texture2D" uid="uid://bqopbliavh0x7" path="res://art/sprites/Qualle/Qualle004.png" id="5_6vymy"]
+[ext_resource type="Texture2D" uid="uid://dx1mto7okiwcf" path="res://art/sprites/Qualle/Qualle005.png" id="6_jelkx"]
+[ext_resource type="Texture2D" uid="uid://c8xluoyi8nscy" path="res://art/sprites/Qualle/Qualle006.png" id="7_vef7x"]
+[ext_resource type="Texture2D" uid="uid://b33q3eukiw21s" path="res://art/sprites/Qualle/Qualle007.png" id="8_j3l0v"]
+[ext_resource type="Texture2D" uid="uid://c73keryosvo81" path="res://art/sprites/Qualle/Qualle008.png" id="9_hlodq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wec4i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hl32m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ff3tf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_eslyt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0ofry")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6vymy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jelkx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vef7x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_j3l0v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_hlodq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uj46r"]
+size = Vector2(130, 158)
+
+[node name="Qualle" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, 22)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_wec4i")
+autoplay = "default"
+frame_progress = 0.17248
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("3_uuk1v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(4, -5)
+shape = SubResource("RectangleShape2D_uj46r")
+
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
