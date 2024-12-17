@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cpo6nyqj26pf8"]
+[gd_scene load_steps=15 format=3 uid="uid://cpo6nyqj26pf8"]
 
 [ext_resource type="PackedScene" uid="uid://c0atf75bwaldk" path="res://scenes/player.tscn" id="1_ft177"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_tye50"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://bdbxhaox6ucy1" path="res://scenes/Objects/Anglerfisch.tscn" id="3_4b4uf"]
 [ext_resource type="PackedScene" uid="uid://b78ajil6fj2kp" path="res://scenes/Objects/Qualle.tscn" id="6_kdbff"]
 [ext_resource type="PackedScene" uid="uid://b4dulc3yxgntg" path="res://scenes/Objects/Wels.tscn" id="7_4mr2o"]
+[ext_resource type="PackedScene" uid="uid://xu3g8n5jhnm7" path="res://scenes/Objects/Blobfisch.tscn" id="8_5t8ih"]
+[ext_resource type="PackedScene" uid="uid://cueqbtinfdjlk" path="res://scenes/Objects/Oktopus.tscn" id="9_r8wjk"]
+[ext_resource type="PackedScene" uid="uid://dtay02ovcaqer" path="res://scenes/Objects/Pflanze1.tscn" id="10_pvreo"]
 
 [sub_resource type="Gradient" id="Gradient_h6e7l"]
 
@@ -27,6 +30,7 @@ size = Vector2(884, 20)
 script = ExtResource("1_tye50")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="Background" type="ColorRect" parent="."]
@@ -107,11 +111,23 @@ offset_bottom = 1657.0
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("1_ft177")]
 position = Vector2(428, 282)
 
-[node name="Anglerfisch" parent="." instance=ExtResource("3_4b4uf")]
-position = Vector2(538, 722)
+[node name="Objects" type="Node2D" parent="."]
+position = Vector2(428, 282)
 
-[node name="Qualle" parent="." instance=ExtResource("6_kdbff")]
-position = Vector2(136, 1265)
+[node name="Anglerfisch" parent="Objects" instance=ExtResource("3_4b4uf")]
+position = Vector2(110, 440)
 
-[node name="Wels" parent="." instance=ExtResource("7_4mr2o")]
-position = Vector2(521, 1625)
+[node name="Qualle" parent="Objects" instance=ExtResource("6_kdbff")]
+position = Vector2(-292, 983)
+
+[node name="Wels" parent="Objects" instance=ExtResource("7_4mr2o")]
+position = Vector2(93, 1343)
+
+[node name="Blobfisch" parent="Objects" instance=ExtResource("8_5t8ih")]
+position = Vector2(148, 825)
+
+[node name="Oktopus" parent="Objects" instance=ExtResource("9_r8wjk")]
+position = Vector2(-250, 1435)
+
+[node name="Pflanze1" parent="Objects" instance=ExtResource("10_pvreo")]
+position = Vector2(76, 1125)

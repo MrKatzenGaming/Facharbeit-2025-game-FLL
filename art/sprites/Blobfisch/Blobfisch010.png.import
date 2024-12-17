@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctwkt6mh3ycbo"
-path="res://.godot/imported/Anglerfisch.png-1f3b3376990fed15416de3380dfc69cb.ctex"
+uid="uid://btjb4r2vtgq5w"
+path="res://.godot/imported/Blobfisch010.png-0db016dff04d0e9c087e691f1c00ce9f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/sprites/Anglerfisch.png"
-dest_files=["res://.godot/imported/Anglerfisch.png-1f3b3376990fed15416de3380dfc69cb.ctex"]
+source_file="res://art/sprites/Blobfisch/Blobfisch010.png"
+dest_files=["res://.godot/imported/Blobfisch010.png-0db016dff04d0e9c087e691f1c00ce9f.ctex"]
 
 [params]
 

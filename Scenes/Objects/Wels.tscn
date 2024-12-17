@@ -64,7 +64,6 @@ position = Vector2(5, -70)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_wec4i")
 autoplay = "default"
-frame_progress = 0.0381853
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("10_wa01y")

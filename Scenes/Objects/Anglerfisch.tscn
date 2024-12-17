@@ -1,21 +1,94 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdbxhaox6ucy1"]
+[gd_scene load_steps=20 format=3 uid="uid://bdbxhaox6ucy1"]
 
-[ext_resource type="Texture2D" uid="uid://ctwkt6mh3ycbo" path="res://art/sprites/Anglerfisch.png" id="1_u3rbl"]
+[ext_resource type="Texture2D" uid="uid://crmq0njp6khdk" path="res://art/sprites/Anglerfisch/Anglerfisch000.png" id="1_y37ay"]
+[ext_resource type="Texture2D" uid="uid://ck3a63r6gdxpy" path="res://art/sprites/Anglerfisch/Anglerfisch001.png" id="2_07oan"]
 [ext_resource type="Script" path="res://scripts/Object-Colission-Check.gd" id="2_qk7kn"]
+[ext_resource type="Texture2D" uid="uid://coklpuu0bc5qu" path="res://art/sprites/Anglerfisch/Anglerfisch002.png" id="3_itgny"]
+[ext_resource type="Texture2D" uid="uid://becnn28iklrmm" path="res://art/sprites/Anglerfisch/Anglerfisch003.png" id="4_j3cl4"]
+[ext_resource type="Texture2D" uid="uid://gp2judfdxtyu" path="res://art/sprites/Anglerfisch/Anglerfisch004.png" id="5_pyi3b"]
+[ext_resource type="Texture2D" uid="uid://c3a5wa6x3wtac" path="res://art/sprites/Anglerfisch/Anglerfisch005.png" id="6_l426g"]
+[ext_resource type="Texture2D" uid="uid://cetm2caqm5f3o" path="res://art/sprites/Anglerfisch/Anglerfisch006.png" id="7_i87sv"]
+[ext_resource type="Texture2D" uid="uid://dbqsjjo2f1hhc" path="res://art/sprites/Anglerfisch/Anglerfisch007.png" id="8_6yk7q"]
+[ext_resource type="Texture2D" uid="uid://vj7evhwis377" path="res://art/sprites/Anglerfisch/Anglerfisch008.png" id="9_cy7mt"]
+[ext_resource type="Texture2D" uid="uid://dx6qqc1gojv4c" path="res://art/sprites/Anglerfisch/Anglerfisch009.png" id="10_6svv4"]
+[ext_resource type="Texture2D" uid="uid://csprlpapayp6l" path="res://art/sprites/Anglerfisch/Anglerfisch010.png" id="11_xh8ns"]
+[ext_resource type="Texture2D" uid="uid://4x6rqrcl65pr" path="res://art/sprites/Anglerfisch/Anglerfisch011.png" id="12_nxc64"]
+[ext_resource type="Texture2D" uid="uid://b1lr3mtvcbapc" path="res://art/sprites/Anglerfisch/Anglerfisch012.png" id="13_yyrhd"]
+[ext_resource type="Texture2D" uid="uid://5h2rut21gpjl" path="res://art/sprites/Anglerfisch/Anglerfisch013.png" id="14_em0nl"]
+[ext_resource type="Texture2D" uid="uid://ddy7uqholli7k" path="res://art/sprites/Anglerfisch/Anglerfisch014.png" id="15_n2o7d"]
+[ext_resource type="Texture2D" uid="uid://bfbq77b48b0vb" path="res://art/sprites/Anglerfisch/Anglerfisch015.png" id="16_clixu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_431rg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_y37ay")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_07oan")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_itgny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_j3cl4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pyi3b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_l426g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_i87sv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6yk7q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_cy7mt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6svv4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_xh8ns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_nxc64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_yyrhd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_em0nl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_n2o7d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_clixu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uj46r"]
-size = Vector2(211, 146)
+size = Vector2(336, 187)
 
 [node name="Anglerfisch" type="Node2D" groups=["Obj"]]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_u3rbl")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(115, 133)
+sprite_frames = SubResource("SpriteFrames_431rg")
+autoplay = "default"
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("2_qk7kn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(5.5, 6)
+position = Vector2(68, -14.5)
 shape = SubResource("RectangleShape2D_uj46r")
 
 [connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]

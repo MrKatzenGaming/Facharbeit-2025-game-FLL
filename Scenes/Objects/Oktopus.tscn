@@ -1,0 +1,76 @@
+[gd_scene load_steps=15 format=3 uid="uid://cueqbtinfdjlk"]
+
+[ext_resource type="Texture2D" uid="uid://dm6c104kf4244" path="res://art/sprites/Oktopus/Oktopus000.png" id="1_1kw14"]
+[ext_resource type="Texture2D" uid="uid://du036q5yfde74" path="res://art/sprites/Oktopus/Oktopus001.png" id="2_uu7d1"]
+[ext_resource type="Texture2D" uid="uid://0t4v8nlp32iw" path="res://art/sprites/Oktopus/Oktopus002.png" id="3_q3jct"]
+[ext_resource type="Texture2D" uid="uid://dgo0gbpfrehtn" path="res://art/sprites/Oktopus/Oktopus003.png" id="4_kbk76"]
+[ext_resource type="Texture2D" uid="uid://dbs2oajiplggn" path="res://art/sprites/Oktopus/Oktopus004.png" id="5_cyb64"]
+[ext_resource type="Texture2D" uid="uid://dys3sj0vpp18v" path="res://art/sprites/Oktopus/Oktopus005.png" id="6_w34vb"]
+[ext_resource type="Texture2D" uid="uid://dfadsi1elm6iv" path="res://art/sprites/Oktopus/Oktopus006.png" id="7_sh345"]
+[ext_resource type="Texture2D" uid="uid://cb1s7tp4xqao8" path="res://art/sprites/Oktopus/Oktopus007.png" id="8_bh5oq"]
+[ext_resource type="Texture2D" uid="uid://1ccn0po3lt10" path="res://art/sprites/Oktopus/Oktopus008.png" id="9_a846q"]
+[ext_resource type="Script" path="res://scripts/Object-Colission-Check.gd" id="10_lhtt1"]
+[ext_resource type="Texture2D" uid="uid://de25g4j7p5yt1" path="res://art/sprites/Oktopus/Oktopus009.png" id="10_y8kyc"]
+[ext_resource type="Texture2D" uid="uid://dqc7k5sw4m4wb" path="res://art/sprites/Oktopus/Oktopus010.png" id="11_4f6gj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wec4i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1kw14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_uu7d1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_q3jct")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kbk76")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cyb64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_w34vb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_sh345")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_bh5oq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_a846q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_y8kyc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_4f6gj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uj46r"]
+size = Vector2(148, 185)
+
+[node name="Oktopus" type="Node2D" groups=["Obj"]]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(6, -1)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_wec4i")
+autoplay = "default"
+frame_progress = 0.45502
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("10_lhtt1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(13, -18.5)
+shape = SubResource("RectangleShape2D_uj46r")
+
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
