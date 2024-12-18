@@ -57,4 +57,4 @@ func check_flash() -> void:
 		$Flash/FlashArea.show()
 		#color_rect_2.show()
 		#canvas_modulate.hide()
-		flash_light.energy = 50
+		flash_light.energy = 10

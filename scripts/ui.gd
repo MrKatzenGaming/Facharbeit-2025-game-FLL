@@ -20,7 +20,10 @@ func updateTimer() -> void:
 	var timemin:int = int(time/60)
 	var timesec = time-timemin*60
 	
-	timer_label.text = "" + str(timemin) + ":" + str(timesec)
+	if timesec >= 10:
+		timer_label.text = "" + str(timemin) + ":" + str(timesec)
+	else:
+		timer_label.text = "" + str(timemin) + ":0" + str(timesec)
 	
 	if time == 0:
-		pass # handle no time left logic
+		pass #TODO: handle no time left logic
