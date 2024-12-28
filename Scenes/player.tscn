@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c0atf75bwaldk"]
+[gd_scene load_steps=17 format=3 uid="uid://c0atf75bwaldk"]
 
 [ext_resource type="Script" path="res://scripts/character_body_2d.gd" id="1_f7fnd"]
 [ext_resource type="Script" path="res://scripts/player_cam.gd" id="3_nufpk"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://qmosxmdriwm7" path="res://art/sprites/Uboot.png" id="4_kwr26"]
 [ext_resource type="Script" path="res://scripts/LookAtCursor.gd" id="4_uror3"]
 [ext_resource type="PackedScene" uid="uid://wjym08dvo1ir" path="res://scenes/ui.tscn" id="6_15rd0"]
+[ext_resource type="Script" path="res://scripts/sonar.gd" id="7_rcsgt"]
 
 [sub_resource type="Gradient" id="Gradient_pouoi"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -36,6 +37,21 @@ fill_to = Vector2(0.495726, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xii61"]
 size = Vector2(275, 199.5)
+
+[sub_resource type="Gradient" id="Gradient_lt085"]
+offsets = PackedFloat32Array(0, 0.538732, 0.545775, 1)
+colors = PackedColorArray(0, 1, 0, 0.501961, 0.054902, 1, 0.054902, 0.501961, 0.156863, 0.156863, 0.156863, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xnxds"]
+gradient = SubResource("Gradient_lt085")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2u2eb"]
+radius = 34.0
 
 [node name="Player" type="Node2D"]
 
@@ -87,6 +103,22 @@ shape = SubResource("RectangleShape2D_xii61")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="CharacterBody2D"]
 remote_path = NodePath("../../PlayerCam")
+
+[node name="Sonar" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(51, 51)
+texture = SubResource("GradientTexture2D_xnxds")
+script = ExtResource("7_rcsgt")
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D/Sonar" groups=["Sonar"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Sonar/Area2D"]
+shape = SubResource("CircleShape2D_2u2eb")
+
+[node name="CooldownTimer" type="Timer" parent="CharacterBody2D"]
+process_mode = 1
+process_callback = 0
+wait_time = 30.0
+one_shot = true
 
 [node name="PlayerCam" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)

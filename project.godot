@@ -22,6 +22,7 @@ config/icon="res://icon.svg"
 PlayerVariables="*res://scripts/singletones/PlayerVariables.gd"
 ConfigFileHandler="*res://scripts/singletones/ConfigFileHandler.gd"
 ConfigHandler="*res://scripts/singletones/ConfigHandler.gd"
+SignalBus="*res://scripts/singletones/SignalBus.gd"
 
 [display]
 
@@ -38,6 +39,7 @@ version_control/autoload_on_startup=true
 [global_group]
 
 Obj="Object"
+Sonar=""
 
 [input]
 

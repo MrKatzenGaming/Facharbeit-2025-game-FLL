@@ -19,7 +19,8 @@ func _on_area_entered(area: Area2D) -> void:
 			
 		if parent.is_in_group("Obj"):
 			PlayerVariables.add_score(parent.position.y/100)
-
+	if area.is_in_group("Sonar") && process_mode != Node.PROCESS_MODE_DISABLED:
+		SignalBus.sonar_entered.emit()
 func disable_node(parent:Node) -> void:
 		#parent.hide()
 		parent.process_mode = Node.PROCESS_MODE_DISABLED

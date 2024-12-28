@@ -26,6 +26,9 @@ func _physics_process(_delta: float) -> void:
 		get_tree().paused = 1
 		pause_menu.show()
 		
+	if Input.is_key_pressed(KEY_E):
+		$Sonar.activate()
+		
 	
 	move_and_slide()
 
