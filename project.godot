@@ -40,6 +40,13 @@ version_control/autoload_on_startup=true
 
 Obj="Object"
 Sonar=""
+Anglerfisch=""
+Blobfisch=""
+Koralle=""
+Plattenkoralle=""
+Kragenhai=""
+Vampirtintenfisch=""
+Qualle=""
 
 [input]
 

@@ -49,7 +49,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uj46r"]
 size = Vector2(130, 158)
 
-[node name="Qualle" type="Node2D" groups=["Obj"]]
+[node name="Qualle" type="Node2D" groups=["Obj", "Qualle"]]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(8, 22)

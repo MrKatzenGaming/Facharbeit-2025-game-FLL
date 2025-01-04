@@ -57,7 +57,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uj46r"]
 size = Vector2(242, 95)
 
-[node name="Wels" type="Node2D" groups=["Obj"]]
+[node name="Kragenhai" type="Node2D" groups=["Kragenhai", "Obj"]]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(5, -70)

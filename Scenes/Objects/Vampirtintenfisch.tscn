@@ -57,7 +57,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uj46r"]
 size = Vector2(148, 185)
 
-[node name="Oktopus" type="Node2D" groups=["Obj"]]
+[node name="Vampirtintenfisch" type="Node2D" groups=["Obj", "Vampirtintenfisch"]]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(6, -1)

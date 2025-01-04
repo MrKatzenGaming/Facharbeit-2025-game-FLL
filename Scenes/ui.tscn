@@ -1,6 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://wjym08dvo1ir"]
+[gd_scene load_steps=15 format=3 uid="uid://wjym08dvo1ir"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_uwr7c"]
+[ext_resource type="Texture2D" uid="uid://crmq0njp6khdk" path="res://art/sprites/Anglerfisch/Anglerfisch000.png" id="2_ne041"]
+[ext_resource type="Texture2D" uid="uid://dnr77jn3g7l4" path="res://art/sprites/Blobfisch/Blobfisch000.png" id="3_u3jft"]
+[ext_resource type="Texture2D" uid="uid://dm6c104kf4244" path="res://art/sprites/Oktopus/Oktopus000.png" id="4_gwwrh"]
+[ext_resource type="Texture2D" uid="uid://cfswnjw4kyjru" path="res://art/sprites/Qualle/Qualle000.png" id="5_5crvo"]
+[ext_resource type="Texture2D" uid="uid://cn2ads06y2ryb" path="res://art/sprites/Wels/Wels000.png" id="6_vencw"]
+[ext_resource type="Texture2D" uid="uid://chno2hg17xl6a" path="res://art/sprites/koralle.PNG" id="7_2uu17"]
+[ext_resource type="Texture2D" uid="uid://debv0gsuutytm" path="res://art/sprites/Pflanze.PNG" id="8_iq6se"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_50gdd"]
 light_mode = 1
@@ -20,6 +27,9 @@ gradient = SubResource("Gradient_4drvu")
 fill_from = Vector2(0.5, 1)
 fill_to = Vector2(0.5, 0)
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nd7ym"]
+light_mode = 1
+
 [node name="UI" type="Control"]
 material = SubResource("CanvasItemMaterial_50gdd")
 layout_mode = 3
@@ -36,13 +46,13 @@ script = ExtResource("1_uwr7c")
 use_parent_material = true
 layout_mode = 0
 offset_right = 120.0
-offset_bottom = 80.0
+offset_bottom = 111.0
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 use_parent_material = true
 layout_mode = 0
-offset_top = 80.0
+offset_top = 111.0
 offset_right = 120.0
 offset_bottom = 1080.0
 
@@ -51,13 +61,13 @@ use_parent_material = true
 layout_mode = 0
 offset_left = 120.0
 offset_right = 1920.0
-offset_bottom = 80.0
+offset_bottom = 111.0
 
 [node name="TimerLabel" type="Label" parent="."]
 use_parent_material = true
 layout_mode = 0
 offset_right = 120.0
-offset_bottom = 80.0
+offset_bottom = 111.0
 text = "5:00"
 label_settings = SubResource("LabelSettings_yb85d")
 horizontal_alignment = 1
@@ -66,10 +76,10 @@ vertical_alignment = 1
 [node name="ScoreLabel" type="Label" parent="."]
 use_parent_material = true
 layout_mode = 0
-offset_left = 137.0
-offset_top = 102.0
-offset_right = 464.0
-offset_bottom = 125.0
+offset_left = 125.0
+offset_top = 114.0
+offset_right = 452.0
+offset_bottom = 137.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Score: 0"
 label_settings = SubResource("LabelSettings_3sc4s")
@@ -77,8 +87,57 @@ label_settings = SubResource("LabelSettings_3sc4s")
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 use_parent_material = true
 layout_mode = 0
-offset_left = 19.0
-offset_top = 124.0
-offset_right = 94.0
-offset_bottom = 712.0
+offset_left = 22.0
+offset_top = 140.0
+offset_right = 97.0
+offset_bottom = 728.0
 texture = SubResource("GradientTexture2D_5tdw6")
+
+[node name="Anglerfisch" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+material = SubResource("CanvasItemMaterial_nd7ym")
+position = Vector2(289, 138)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("2_ne041")
+
+[node name="Blobfisch" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+material = SubResource("CanvasItemMaterial_nd7ym")
+position = Vector2(1135, 32)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_u3jft")
+
+[node name="Vampirtintenfisch" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+material = SubResource("CanvasItemMaterial_nd7ym")
+position = Vector2(597, 63)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_gwwrh")
+
+[node name="Qualle" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+material = SubResource("CanvasItemMaterial_nd7ym")
+position = Vector2(375, 74)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_5crvo")
+
+[node name="Kragenhai" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+material = SubResource("CanvasItemMaterial_nd7ym")
+position = Vector2(830, -76)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_vencw")
+
+[node name="Koralle" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+material = SubResource("CanvasItemMaterial_nd7ym")
+position = Vector2(1300, 45)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_2uu17")
+
+[node name="Plattenkoralle" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+material = SubResource("CanvasItemMaterial_nd7ym")
+position = Vector2(1382, 101)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("8_iq6se")

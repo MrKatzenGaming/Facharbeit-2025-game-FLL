@@ -19,6 +19,28 @@ func _on_area_entered(area: Area2D) -> void:
 			
 		if parent.is_in_group("Obj"):
 			PlayerVariables.add_score(parent.position.y/100)
+			for group in parent.get_groups():
+				match group:
+					"Anglerfisch":
+						SignalBus.collected_anglerfisch.emit()
+					"Blobfisch":
+						SignalBus.collected_blobfisch.emit()
+					"Qualle":
+						SignalBus.collected_feuerqualle.emit()
+					"DumboOktopus":
+						SignalBus.collected_dumbo_oktopus.emit()
+					"Vampirtintenfisch":
+						SignalBus.collected_vampirtintenfisch.emit()
+					"Kragenhai":
+						SignalBus.collected_kragenhai.emit()
+					"Koralle":
+						SignalBus.collected_tiefseekoralle.emit()
+					"Plattenkoralle":
+						SignalBus.collected_plattenkoralle.emit()
+					"Seestern":
+						SignalBus.collected_seestern.emit()
+					"Drachenfisch":
+						SignalBus.collected_drachenfisch.emit()
 	if area.is_in_group("Sonar") && process_mode != Node.PROCESS_MODE_DISABLED:
 		SignalBus.sonar_entered.emit()
 func disable_node(parent:Node) -> void:

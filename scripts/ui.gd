@@ -7,6 +7,16 @@ var start_time_min = 0.5
 
 func _ready() -> void:
 	timer = get_tree().create_timer(start_time_min*60,false)
+	SignalBus.collected_anglerfisch.connect(func():$Anglerfisch.self_modulate = Color(1,1,1,1))
+	SignalBus.collected_feuerqualle.connect(func():$Qualle.self_modulate = Color(1,1,1,1))
+	SignalBus.collected_dumbo_oktopus.connect(func():pass)
+	SignalBus.collected_vampirtintenfisch.connect(func():$Vampirtintenfisch.self_modulate = Color(1,1,1,1))
+	SignalBus.collected_kragenhai.connect(func():$Kragenhai.self_modulate = Color(1,1,1,1))
+	SignalBus.collected_blobfisch.connect(func():$Blobfisch.self_modulate = Color(1,1,1,1))
+	SignalBus.collected_tiefseekoralle.connect(func():$Koralle.self_modulate = Color(1,1,1,1))
+	SignalBus.collected_plattenkoralle.connect(func():$Plattenkoralle.self_modulate = Color(1,1,1,1))
+	SignalBus.collected_seestern.connect(func():pass)
+	SignalBus.collected_drachenfisch.connect(func():pass)
 
 func _process(_delta: float) -> void:
 	updateScore()
@@ -26,4 +36,4 @@ func updateTimer() -> void:
 		timer_label.text = "" + str(timemin) + ":0" + str(timesec)
 	
 	if time == 0:
-		pass #TODO: handle no time left logic
+		SignalBus.no_time_left.emit()

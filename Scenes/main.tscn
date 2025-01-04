@@ -6,10 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://bxmpciykgboan" path="res://art/sprites/Floor-Sand.png" id="3_1ibjo"]
 [ext_resource type="PackedScene" uid="uid://bdbxhaox6ucy1" path="res://scenes/Objects/Anglerfisch.tscn" id="3_4b4uf"]
 [ext_resource type="PackedScene" uid="uid://b78ajil6fj2kp" path="res://scenes/Objects/Qualle.tscn" id="6_kdbff"]
-[ext_resource type="PackedScene" uid="uid://b4dulc3yxgntg" path="res://scenes/Objects/Wels.tscn" id="7_4mr2o"]
+[ext_resource type="PackedScene" uid="uid://b4dulc3yxgntg" path="res://scenes/Objects/Kragenhai.tscn" id="7_4mr2o"]
 [ext_resource type="PackedScene" uid="uid://xu3g8n5jhnm7" path="res://scenes/Objects/Blobfisch.tscn" id="8_5t8ih"]
-[ext_resource type="PackedScene" uid="uid://cueqbtinfdjlk" path="res://scenes/Objects/Oktopus.tscn" id="9_r8wjk"]
-[ext_resource type="PackedScene" uid="uid://dtay02ovcaqer" path="res://scenes/Objects/Pflanze1.tscn" id="10_pvreo"]
+[ext_resource type="PackedScene" uid="uid://cueqbtinfdjlk" path="res://scenes/Objects/Vampirtintenfisch.tscn" id="9_r8wjk"]
+[ext_resource type="PackedScene" uid="uid://dtay02ovcaqer" path="res://scenes/Objects/Plattenkoralle.tscn" id="10_pvreo"]
 [ext_resource type="PackedScene" uid="uid://dgxif0dhpuq48" path="res://scenes/Objects/Koralle.tscn" id="11_b4ih0"]
 
 [sub_resource type="Gradient" id="Gradient_h6e7l"]
@@ -117,17 +117,17 @@ position = Vector2(110, 440)
 [node name="Qualle" parent="Objects" instance=ExtResource("6_kdbff")]
 position = Vector2(-292, 983)
 
-[node name="Wels" parent="Objects" instance=ExtResource("7_4mr2o")]
+[node name="Kragenhai" parent="Objects" instance=ExtResource("7_4mr2o")]
 position = Vector2(93, 1343)
 
 [node name="Blobfisch" parent="Objects" instance=ExtResource("8_5t8ih")]
 position = Vector2(148, 825)
 
-[node name="Oktopus" parent="Objects" instance=ExtResource("9_r8wjk")]
-position = Vector2(-250, 1435)
-
-[node name="Pflanze1" parent="Objects" instance=ExtResource("10_pvreo")]
+[node name="Plattenkoralle" parent="Objects" instance=ExtResource("10_pvreo")]
 position = Vector2(76, 1125)
+
+[node name="Vampirtintenfisch" parent="Objects" instance=ExtResource("9_r8wjk")]
+position = Vector2(-250, 1435)
 
 [node name="Koralle" parent="Objects" instance=ExtResource("11_b4ih0")]
 position = Vector2(143, 1751)

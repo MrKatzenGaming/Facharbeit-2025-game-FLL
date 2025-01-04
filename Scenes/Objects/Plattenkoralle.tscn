@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uj46r"]
 size = Vector2(130, 101)
 
-[node name="Pflanze1" type="Node2D" groups=["Obj"]]
+[node name="Plattenkoralle" type="Node2D" groups=["Obj", "Plattenkoralle"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-8, 23)
