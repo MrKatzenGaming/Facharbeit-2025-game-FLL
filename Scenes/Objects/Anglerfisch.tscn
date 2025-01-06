@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bdbxhaox6ucy1"]
+[gd_scene load_steps=24 format=3 uid="uid://bdbxhaox6ucy1"]
 
 [ext_resource type="Texture2D" uid="uid://crmq0njp6khdk" path="res://art/sprites/Anglerfisch/Anglerfisch000.png" id="1_y37ay"]
 [ext_resource type="Texture2D" uid="uid://ck3a63r6gdxpy" path="res://art/sprites/Anglerfisch/Anglerfisch001.png" id="2_07oan"]
@@ -77,6 +77,24 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uj46r"]
 size = Vector2(336, 187)
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0jvji"]
+light_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_0mkm5"]
+offsets = PackedFloat32Array(0, 0.538732, 0.538732, 1)
+colors = PackedColorArray(1, 0, 0, 1, 1, 0.05, 0.05, 1, 0.156863, 0.156863, 0.156863, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bgldg"]
+gradient = SubResource("Gradient_0mkm5")
+width = 512
+height = 512
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aitw6"]
+radius = 139.0
+
 [node name="Anglerfisch" type="Node2D" groups=["Anglerfisch", "Obj"]]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -90,5 +108,15 @@ script = ExtResource("2_qk7kn")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(68, -14.5)
 shape = SubResource("RectangleShape2D_uj46r")
+
+[node name="Sonar" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_0jvji")
+position = Vector2(62, 0)
+texture = SubResource("GradientTexture2D_bgldg")
+
+[node name="Area2D" type="Area2D" parent="Sonar"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sonar/Area2D"]
+shape = SubResource("CircleShape2D_aitw6")
 
 [connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]

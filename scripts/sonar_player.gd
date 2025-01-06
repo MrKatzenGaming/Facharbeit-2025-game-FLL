@@ -10,11 +10,14 @@ func _ready() -> void:
 	SignalBus.sonar_entered.connect(_on_solar_entered)
 	self.scale = Vector2(0,0)
 	self.process_mode = Node.PROCESS_MODE_DISABLED
+	cooldown.wait_time = 0.05 if PlayerVariables.Debug else 30
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	#print(timer)
 	print(cooldown.time_left)
+
 
 func activate() -> void:
 	if cooldown.time_left == 0 && PlayerVariables.AbilityCount > 0:

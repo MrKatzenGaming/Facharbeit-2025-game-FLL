@@ -103,14 +103,14 @@ texture = ExtResource("2_ne041")
 [node name="Blobfisch" type="Sprite2D" parent="."]
 self_modulate = Color(0, 0, 0, 1)
 material = SubResource("CanvasItemMaterial_nd7ym")
-position = Vector2(1135, 32)
+position = Vector2(1035, 34)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("3_u3jft")
 
 [node name="Vampirtintenfisch" type="Sprite2D" parent="."]
 self_modulate = Color(0, 0, 0, 1)
 material = SubResource("CanvasItemMaterial_nd7ym")
-position = Vector2(597, 63)
+position = Vector2(489, 59)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("4_gwwrh")
 
@@ -124,20 +124,20 @@ texture = ExtResource("5_5crvo")
 [node name="Kragenhai" type="Sprite2D" parent="."]
 self_modulate = Color(0, 0, 0, 1)
 material = SubResource("CanvasItemMaterial_nd7ym")
-position = Vector2(830, -76)
+position = Vector2(735, -76)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("6_vencw")
 
 [node name="Koralle" type="Sprite2D" parent="."]
 self_modulate = Color(0, 0, 0, 1)
 material = SubResource("CanvasItemMaterial_nd7ym")
-position = Vector2(1300, 45)
+position = Vector2(1181, 47)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("7_2uu17")
 
 [node name="Plattenkoralle" type="Sprite2D" parent="."]
 self_modulate = Color(0, 0, 0, 1)
 material = SubResource("CanvasItemMaterial_nd7ym")
-position = Vector2(1382, 101)
+position = Vector2(1267, 101)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("8_iq6se")

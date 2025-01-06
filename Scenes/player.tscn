@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://qmosxmdriwm7" path="res://art/sprites/Uboot.png" id="4_kwr26"]
 [ext_resource type="Script" path="res://scripts/LookAtCursor.gd" id="4_uror3"]
 [ext_resource type="PackedScene" uid="uid://wjym08dvo1ir" path="res://scenes/ui.tscn" id="6_15rd0"]
-[ext_resource type="Script" path="res://scripts/sonar.gd" id="7_rcsgt"]
+[ext_resource type="Script" path="res://scripts/sonar_player.gd" id="7_rcsgt"]
 
 [sub_resource type="Gradient" id="Gradient_pouoi"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -41,12 +41,12 @@ size = Vector2(275, 199.5)
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_oc0rc"]
 light_mode = 1
 
-[sub_resource type="Gradient" id="Gradient_lt085"]
+[sub_resource type="Gradient" id="Gradient_x5fq1"]
 offsets = PackedFloat32Array(0, 0.538732, 0.545775, 1)
 colors = PackedColorArray(0, 1, 0, 0.501961, 0.054902, 1, 0.054902, 0.501961, 0.156863, 0.156863, 0.156863, 0, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_xnxds"]
-gradient = SubResource("Gradient_lt085")
+gradient = SubResource("Gradient_x5fq1")
 width = 512
 height = 512
 fill = 1
@@ -121,7 +121,7 @@ shape = SubResource("CircleShape2D_2u2eb")
 [node name="CooldownTimer" type="Timer" parent="CharacterBody2D"]
 process_mode = 1
 process_callback = 0
-wait_time = 30.0
+wait_time = 0.05
 one_shot = true
 
 [node name="PlayerCam" type="Camera2D" parent="."]

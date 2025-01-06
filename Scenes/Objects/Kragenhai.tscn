@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b4dulc3yxgntg"]
+[gd_scene load_steps=19 format=3 uid="uid://b4dulc3yxgntg"]
 
 [ext_resource type="Texture2D" uid="uid://cn2ads06y2ryb" path="res://art/sprites/Wels/Wels000.png" id="1_a4q6s"]
 [ext_resource type="Texture2D" uid="uid://dnnvl8778422k" path="res://art/sprites/Wels/Wels001.png" id="2_y60jm"]
@@ -57,6 +57,24 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uj46r"]
 size = Vector2(242, 95)
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wgk8v"]
+light_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_gqibc"]
+offsets = PackedFloat32Array(0, 0.538732, 0.538732, 1)
+colors = PackedColorArray(1, 0, 0, 1, 1, 0.05, 0.05, 1, 0.156863, 0.156863, 0.156863, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_57q8f"]
+gradient = SubResource("Gradient_gqibc")
+width = 512
+height = 512
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aloyu"]
+radius = 139.0
+
 [node name="Kragenhai" type="Node2D" groups=["Kragenhai", "Obj"]]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -71,5 +89,14 @@ script = ExtResource("10_wa01y")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(7, 1.5)
 shape = SubResource("RectangleShape2D_uj46r")
+
+[node name="Sonar" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_wgk8v")
+texture = SubResource("GradientTexture2D_57q8f")
+
+[node name="Area2D" type="Area2D" parent="Sonar"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sonar/Area2D"]
+shape = SubResource("CircleShape2D_aloyu")
 
 [connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]

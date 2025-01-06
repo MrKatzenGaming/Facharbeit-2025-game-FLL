@@ -12,7 +12,6 @@ var FlashTime:int = 0
 
 var paused:bool = false
 
-
 func _physics_process(_delta: float) -> void:
 
 	check_movement()
