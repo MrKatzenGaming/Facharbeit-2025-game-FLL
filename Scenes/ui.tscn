@@ -14,6 +14,7 @@ light_mode = 1
 
 [sub_resource type="LabelSettings" id="LabelSettings_yb85d"]
 font_size = 57
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_3sc4s"]
 
@@ -47,7 +48,7 @@ use_parent_material = true
 layout_mode = 0
 offset_right = 120.0
 offset_bottom = 111.0
-color = Color(0, 0, 0, 1)
+color = Color(0.66, 0.66, 0.66, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 use_parent_material = true
@@ -55,6 +56,7 @@ layout_mode = 0
 offset_top = 111.0
 offset_right = 120.0
 offset_bottom = 1080.0
+color = Color(0.66, 0.66, 0.66, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="."]
 use_parent_material = true
@@ -62,6 +64,7 @@ layout_mode = 0
 offset_left = 120.0
 offset_right = 1920.0
 offset_bottom = 111.0
+color = Color(0.66, 0.66, 0.66, 1)
 
 [node name="TimerLabel" type="Label" parent="."]
 use_parent_material = true
@@ -90,7 +93,7 @@ layout_mode = 0
 offset_left = 22.0
 offset_top = 140.0
 offset_right = 97.0
-offset_bottom = 728.0
+offset_bottom = 1054.0
 texture = SubResource("GradientTexture2D_5tdw6")
 
 [node name="Anglerfisch" type="Sprite2D" parent="."]

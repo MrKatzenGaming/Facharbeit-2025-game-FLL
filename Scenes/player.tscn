@@ -86,6 +86,7 @@ scale = Vector2(1.7, 1.7)
 polygon = PackedVector2Array(0, 0, -100, -150, 100, -150)
 
 [node name="Polygon2D" type="Polygon2D" parent="CharacterBody2D/Flash/FlashArea"]
+visible = false
 scale = Vector2(1.7, 1.7)
 color = Color(1, 0, 0, 0.639216)
 polygon = PackedVector2Array(-100, -150, 100, -150, 0, 0)

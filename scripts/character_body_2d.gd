@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-
-const SPEED:float = 500.0
 var FlashTime:int = 0
 
 @onready var pause_menu: Control = $"../PlayerCam/PauseMenu"
@@ -13,6 +11,8 @@ var FlashTime:int = 0
 var paused:bool = false
 
 func _physics_process(_delta: float) -> void:
+	
+	PlayerVariables.SPEED = 500 - (self.position.y/10)
 
 	check_movement()
 	check_flash()
@@ -28,15 +28,15 @@ func _physics_process(_delta: float) -> void:
 	if Input.is_key_pressed(KEY_E):
 		$Sonar.activate()
 		
+	PlayerVariables.pos = self.position
 	
 	move_and_slide()
 
 func check_movement() -> void:
 	# Get the input direction and handle the movement/deceleration
-	# Handle Up-Down Movement
 	var direction := Input.get_vector("ctrl_left","ctrl_right","ctrl_up","ctrl_down")
 	if direction:
-		velocity = direction * SPEED
+		velocity = direction * PlayerVariables.SPEED
 	else:
 		velocity.y = move_toward(velocity.y , 0 , 20)
 		velocity.x = move_toward(velocity.x , 0 , 20)

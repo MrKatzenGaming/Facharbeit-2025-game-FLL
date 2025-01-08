@@ -23,7 +23,7 @@ func _process(_delta: float) -> void:
 	updateTimer()
 
 func updateScore() -> void:
-	score_label.text = "Score: " + str(PlayerVariables.Score)
+	score_label.text = "Score: " + str(PlayerVariables.Score) + "\nSPEED: " + str(PlayerVariables.SPEED)
 	
 func updateTimer() -> void:
 	var time:float = round(timer.time_left)
