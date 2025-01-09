@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqnex2mb3n0io"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0jvji"]
+light_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_0mkm5"]
+offsets = PackedFloat32Array(0.452055, 0.458904, 0.520548, 0.523973)
+colors = PackedColorArray(1, 0, 0.0166664, 0, 1, 0.05, 0.05, 1, 1, 0, 0.0166664, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bgldg"]
+gradient = SubResource("Gradient_0mkm5")
+width = 512
+height = 512
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aitw6"]
+radius = 139.0
+
+[node name="Sonar" type="Sprite2D"]
+material = SubResource("CanvasItemMaterial_0jvji")
+position = Vector2(62, 0)
+texture = SubResource("GradientTexture2D_bgldg")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_aitw6")

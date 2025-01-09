@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cueqbtinfdjlk"]
+[gd_scene load_steps=16 format=3 uid="uid://cueqbtinfdjlk"]
 
 [ext_resource type="Texture2D" uid="uid://dm6c104kf4244" path="res://art/sprites/Oktopus/Oktopus000.png" id="1_1kw14"]
 [ext_resource type="Texture2D" uid="uid://du036q5yfde74" path="res://art/sprites/Oktopus/Oktopus001.png" id="2_uu7d1"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://scripts/Object-Colission-Check.gd" id="10_lhtt1"]
 [ext_resource type="Texture2D" uid="uid://de25g4j7p5yt1" path="res://art/sprites/Oktopus/Oktopus009.png" id="10_y8kyc"]
 [ext_resource type="Texture2D" uid="uid://dqc7k5sw4m4wb" path="res://art/sprites/Oktopus/Oktopus010.png" id="11_4f6gj"]
+[ext_resource type="PackedScene" uid="uid://cqnex2mb3n0io" path="res://scenes/sonar.tscn" id="13_1p2bq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wec4i"]
 animations = [{
@@ -57,24 +58,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uj46r"]
 size = Vector2(148, 185)
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_bmdk0"]
-light_mode = 1
-
-[sub_resource type="Gradient" id="Gradient_xp20q"]
-offsets = PackedFloat32Array(0, 0.538732, 0.538732, 1)
-colors = PackedColorArray(1, 0, 0, 1, 1, 0.05, 0.05, 1, 0.156863, 0.156863, 0.156863, 0, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_27rdq"]
-gradient = SubResource("Gradient_xp20q")
-width = 512
-height = 512
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.5, 0)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_d8tol"]
-radius = 139.0
-
 [node name="Vampirtintenfisch" type="Node2D" groups=["Obj", "Vampirtintenfisch"]]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -91,13 +74,7 @@ script = ExtResource("10_lhtt1")
 position = Vector2(13, -18.5)
 shape = SubResource("RectangleShape2D_uj46r")
 
-[node name="Sonar" type="Sprite2D" parent="."]
-material = SubResource("CanvasItemMaterial_bmdk0")
-texture = SubResource("GradientTexture2D_27rdq")
-
-[node name="Area2D" type="Area2D" parent="Sonar"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sonar/Area2D"]
-shape = SubResource("CircleShape2D_d8tol")
+[node name="Sonar" parent="." instance=ExtResource("13_1p2bq")]
+position = Vector2(-2, 1)
 
 [connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]

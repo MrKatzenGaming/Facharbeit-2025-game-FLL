@@ -1,28 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dgxif0dhpuq48"]
+[gd_scene load_steps=5 format=3 uid="uid://dgxif0dhpuq48"]
 
 [ext_resource type="Texture2D" uid="uid://chno2hg17xl6a" path="res://art/sprites/koralle.PNG" id="1_sih8m"]
 [ext_resource type="Script" path="res://scripts/Object-Colission-Check.gd" id="2_542i7"]
+[ext_resource type="PackedScene" uid="uid://cqnex2mb3n0io" path="res://scenes/sonar.tscn" id="3_3boud"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uj46r"]
 size = Vector2(91, 79)
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_y8531"]
-light_mode = 1
-
-[sub_resource type="Gradient" id="Gradient_0i0on"]
-offsets = PackedFloat32Array(0, 0.538732, 0.538732, 1)
-colors = PackedColorArray(1, 0, 0, 1, 1, 0.05, 0.05, 1, 0.156863, 0.156863, 0.156863, 0, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_bjhxn"]
-gradient = SubResource("Gradient_0i0on")
-width = 512
-height = 512
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.5, 0)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_4tjlj"]
-radius = 139.0
 
 [node name="Koralle" type="Node2D" groups=["Koralle", "Obj"]]
 
@@ -38,13 +21,7 @@ script = ExtResource("2_542i7")
 position = Vector2(2.5, -24.5)
 shape = SubResource("RectangleShape2D_uj46r")
 
-[node name="Sonar" type="Sprite2D" parent="."]
-material = SubResource("CanvasItemMaterial_y8531")
-texture = SubResource("GradientTexture2D_bjhxn")
-
-[node name="Area2D" type="Area2D" parent="Sonar"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sonar/Area2D"]
-shape = SubResource("CircleShape2D_4tjlj")
+[node name="Sonar" parent="." instance=ExtResource("3_3boud")]
+position = Vector2(0, 0)
 
 [connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]

@@ -7,6 +7,7 @@ var start_time_min = 0.5
 
 func _ready() -> void:
 	timer = get_tree().create_timer(start_time_min*60,false)
+	
 	SignalBus.collected_anglerfisch.connect(func():$Anglerfisch.self_modulate = Color(1,1,1,1))
 	SignalBus.collected_feuerqualle.connect(func():$Qualle.self_modulate = Color(1,1,1,1))
 	SignalBus.collected_dumbo_oktopus.connect(func():pass)
@@ -23,7 +24,10 @@ func _process(_delta: float) -> void:
 	updateTimer()
 
 func updateScore() -> void:
-	score_label.text = "Score: " + str(PlayerVariables.Score) + "\nSPEED: " + str(PlayerVariables.SPEED)
+	if PlayerVariables.Debug:
+		score_label.text = "Score: " + str(PlayerVariables.Score) + "\nSPEED: " + str(PlayerVariables.SPEED)
+	else:
+		score_label.text = "Score: " + str(PlayerVariables.Score)
 	
 func updateTimer() -> void:
 	var time:float = round(timer.time_left)

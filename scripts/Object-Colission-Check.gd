@@ -54,8 +54,13 @@ func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Sonar") && process_mode != Node.PROCESS_MODE_DISABLED:
 		SignalBus.sonar_entered.emit()
 		if sonar:
-			_run_sonar()
-		
+			
+			for i in range(5):
+				var s = sonar.duplicate()
+				add_child(s)
+				_run_sonar(s)
+				await get_tree().create_timer(1).timeout
+				
 func disable_node(parent:Node) -> void:
 		#parent.hide()
 		parent.process_mode = Node.PROCESS_MODE_DISABLED
@@ -66,22 +71,22 @@ func disable_node(parent:Node) -> void:
 		else:
 			sprite_2d.modulate.a = 0.25
 			
-func _run_sonar() -> void:
-	sonar.process_mode = Node.PROCESS_MODE_INHERIT
-	sonar.self_modulate.a = 0.5
-	sonar.scale = Vector2(0.0,0.0)
+func _run_sonar(sonaro) -> void:
+	sonaro.process_mode = Node.PROCESS_MODE_INHERIT
+	sonaro.self_modulate.a = 0.5
+	sonaro.scale = Vector2(0.0,0.0)
 	timer = 500
 	while timer >=1:
-		sonar.scale += Vector2(0.05,0.05)
+		sonaro.scale += Vector2(0.05,0.05)
 		timer -=1
 		await get_tree().create_timer(0.01).timeout
 		
 	timer2 = 25
 	while timer2 >= 1:
 		timer2 -= 1
-		sonar.self_modulate.a -= 0.05
+		sonaro.self_modulate.a -= 0.05
 		await get_tree().create_timer(0.01).timeout
 	
-	sonar.scale = Vector2(0,0)
-	sonar.process_mode = Node.PROCESS_MODE_DISABLED
+	sonaro.scale = Vector2(0,0)
+	sonaro.process_mode = Node.PROCESS_MODE_DISABLED
 		
