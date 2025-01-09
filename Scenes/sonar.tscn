@@ -20,7 +20,6 @@ radius = 139.0
 
 [node name="Sonar" type="Sprite2D"]
 material = SubResource("CanvasItemMaterial_0jvji")
-position = Vector2(62, 0)
 texture = SubResource("GradientTexture2D_bgldg")
 
 [node name="Area2D" type="Area2D" parent="."]

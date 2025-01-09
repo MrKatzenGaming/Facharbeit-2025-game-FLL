@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://wjym08dvo1ir"]
+[gd_scene load_steps=20 format=3 uid="uid://wjym08dvo1ir"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_uwr7c"]
 [ext_resource type="Texture2D" uid="uid://crmq0njp6khdk" path="res://art/sprites/Anglerfisch/Anglerfisch000.png" id="2_ne041"]
@@ -41,6 +41,9 @@ light_mode = 1
 
 [sub_resource type="LabelSettings" id="LabelSettings_jdgnt"]
 font_size = 200
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_lx3q2"]
+light_mode = 1
 
 [node name="UI" type="Control"]
 material = SubResource("CanvasItemMaterial_50gdd")
@@ -190,5 +193,17 @@ offset_right = 814.0
 offset_bottom = 467.0
 action_mode = 0
 text = "Zurück zum Menü"
+
+[node name="Label" type="Label" parent="."]
+material = SubResource("CanvasItemMaterial_lx3q2")
+layout_mode = 0
+offset_left = 123.0
+offset_top = 112.0
+offset_right = 419.0
+offset_bottom = 137.0
+text = "Bewege dich mit WASD oder den Pfeiltasten.
+Bewege deine Maus um das Licht zu Bewegen.
+Fotografiere einen Fisch mit der Leertaste.
+Drücke E um das Sonar zu verwenden."
 
 [connection signal="pressed" from="TimeUp/Button" to="." method="_on_back_button_pressed"]

@@ -34,7 +34,7 @@ layout_mode = 2
 offset_right = 117.0
 offset_bottom = 47.0
 action_mode = 0
-text = "Resume"
+text = "Weiter"
 
 [node name="Main Menu" type="Button" parent="."]
 use_parent_material = true
@@ -43,9 +43,10 @@ offset_top = 48.0
 offset_right = 117.0
 offset_bottom = 95.0
 action_mode = 0
-text = "Back to Menu"
+text = "Hauptmenü"
 
 [node name="Quit" type="Button" parent="."]
+visible = false
 use_parent_material = true
 layout_mode = 2
 offset_top = 96.0

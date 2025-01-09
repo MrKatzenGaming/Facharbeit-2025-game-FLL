@@ -54,9 +54,9 @@ func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Sonar") && process_mode != Node.PROCESS_MODE_DISABLED:
 		SignalBus.sonar_entered.emit()
 		if sonar:
-			
 			for i in range(5):
-				var s = sonar.duplicate()
+				var s = preload("res://scenes/sonar.tscn").instantiate()
+				s.position = sonar.position
 				add_child(s)
 				_run_sonar(s)
 				await get_tree().create_timer(1).timeout
@@ -87,6 +87,5 @@ func _run_sonar(sonaro) -> void:
 		sonaro.self_modulate.a -= 0.05
 		await get_tree().create_timer(0.01).timeout
 	
-	sonaro.scale = Vector2(0,0)
-	sonaro.process_mode = Node.PROCESS_MODE_DISABLED
+	sonaro.queue_free()
 		

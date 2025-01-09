@@ -20,8 +20,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 PlayerVariables="*res://scripts/singletones/PlayerVariables.gd"
-ConfigFileHandler="*res://scripts/singletones/ConfigFileHandler.gd"
-ConfigHandler="*res://scripts/singletones/ConfigHandler.gd"
+ConfigFileHandler="res://scripts/singletones/ConfigFileHandler.gd"
+ConfigHandler="res://scripts/singletones/ConfigHandler.gd"
 SignalBus="*res://scripts/singletones/SignalBus.gd"
 
 [display]

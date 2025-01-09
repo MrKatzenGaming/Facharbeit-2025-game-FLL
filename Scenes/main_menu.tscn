@@ -24,9 +24,10 @@ offset_right = 267.5
 offset_bottom = -30.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Play"
+text = "Spielen"
 
 [node name="Quit" type="Button" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -42,6 +43,7 @@ grow_vertical = 2
 text = "Quit"
 
 [node name="Options" type="Button" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
