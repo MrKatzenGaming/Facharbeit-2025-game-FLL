@@ -2,8 +2,10 @@ extends Control
 
 @onready var score_label: Label = $ScoreLabel
 @onready var timer_label: Label = $TimerLabel
+@onready var time_up: Control = $TimeUp
+
 var timer
-var start_time_min = 0.5
+var start_time_min = 5
 
 func _ready() -> void:
 	timer = get_tree().create_timer(start_time_min*60,false)
@@ -41,3 +43,10 @@ func updateTimer() -> void:
 	
 	if time == 0:
 		SignalBus.no_time_left.emit()
+		get_tree().paused = true
+		time_up.show()
+		
+		
+func _on_back_button_pressed() -> void:
+	get_tree().paused = 0
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")

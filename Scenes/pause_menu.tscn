@@ -33,6 +33,7 @@ use_parent_material = true
 layout_mode = 2
 offset_right = 117.0
 offset_bottom = 47.0
+action_mode = 0
 text = "Resume"
 
 [node name="Main Menu" type="Button" parent="."]
@@ -41,6 +42,7 @@ layout_mode = 2
 offset_top = 48.0
 offset_right = 117.0
 offset_bottom = 95.0
+action_mode = 0
 text = "Back to Menu"
 
 [node name="Quit" type="Button" parent="."]
@@ -49,6 +51,7 @@ layout_mode = 2
 offset_top = 96.0
 offset_right = 117.0
 offset_bottom = 143.0
+action_mode = 0
 text = "Quit"
 
 [connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://wjym08dvo1ir"]
+[gd_scene load_steps=19 format=3 uid="uid://wjym08dvo1ir"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_uwr7c"]
 [ext_resource type="Texture2D" uid="uid://crmq0njp6khdk" path="res://art/sprites/Anglerfisch/Anglerfisch000.png" id="2_ne041"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cn2ads06y2ryb" path="res://art/sprites/Wels/Wels000.png" id="6_vencw"]
 [ext_resource type="Texture2D" uid="uid://chno2hg17xl6a" path="res://art/sprites/koralle.PNG" id="7_2uu17"]
 [ext_resource type="Texture2D" uid="uid://debv0gsuutytm" path="res://art/sprites/Pflanze.PNG" id="8_iq6se"]
+[ext_resource type="Shader" path="res://shaders/pause_menu.gdshader" id="9_pm3hc"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_50gdd"]
 light_mode = 1
@@ -30,6 +31,16 @@ fill_to = Vector2(0.5, 0)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nd7ym"]
 light_mode = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6pdov"]
+shader = ExtResource("9_pm3hc")
+shader_parameter/amount = 1.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mw7sj"]
+light_mode = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_jdgnt"]
+font_size = 200
 
 [node name="UI" type="Control"]
 material = SubResource("CanvasItemMaterial_50gdd")
@@ -77,6 +88,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ScoreLabel" type="Label" parent="."]
+visible = false
 use_parent_material = true
 layout_mode = 0
 offset_left = 125.0
@@ -144,3 +156,39 @@ material = SubResource("CanvasItemMaterial_nd7ym")
 position = Vector2(1267, 101)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("8_iq6se")
+
+[node name="TimeUp" type="Control" parent="."]
+process_mode = 2
+visible = false
+anchors_preset = 0
+offset_left = 225.0
+offset_top = 341.0
+offset_right = 265.0
+offset_bottom = 381.0
+
+[node name="blur" type="ColorRect" parent="TimeUp"]
+material = SubResource("ShaderMaterial_6pdov")
+offset_left = -230.0
+offset_top = -340.0
+offset_right = 1697.0
+offset_bottom = 748.0
+
+[node name="TimeUpLabel" type="Label" parent="TimeUp"]
+process_mode = 2
+material = SubResource("CanvasItemMaterial_mw7sj")
+layout_mode = 0
+offset_right = 1497.0
+offset_bottom = 477.0
+text = "Zeit abgelaufen"
+label_settings = SubResource("LabelSettings_jdgnt")
+
+[node name="Button" type="Button" parent="TimeUp"]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 338.0
+offset_right = 814.0
+offset_bottom = 467.0
+action_mode = 0
+text = "Zurück zum Menü"
+
+[connection signal="pressed" from="TimeUp/Button" to="." method="_on_back_button_pressed"]
