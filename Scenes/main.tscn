@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://dgxif0dhpuq48" path="res://scenes/Objects/Koralle.tscn" id="11_b4ih0"]
 
 [sub_resource type="Gradient" id="Gradient_h6e7l"]
+offsets = PackedFloat32Array(0, 0.608187, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.318713, 0.318713, 0.318713, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_seari"]
 gradient = SubResource("Gradient_h6e7l")
@@ -45,8 +47,8 @@ scale = Vector2(2.4, 2.4)
 texture = ExtResource("2_kvtur")
 
 [node name="PointLight2D" type="PointLight2D" parent="WallTop"]
-position = Vector2(1395.25, 597)
-scale = Vector2(42.455, 24.17)
+position = Vector2(1395.25, 1288.25)
+scale = Vector2(42.455, 37.995)
 energy = 1.5
 texture = SubResource("GradientTexture2D_seari")
 
@@ -58,7 +60,7 @@ offset_bottom = 4792.0
 color = Color(0, 0, 1, 1)
 
 [node name="WallLeft" type="ColorRect" parent="."]
-offset_left = -163.0
+offset_left = -843.0
 offset_top = -607.0
 offset_bottom = 5096.0
 color = Color(0.31, 0.31, 0.31, 1)
@@ -66,7 +68,7 @@ color = Color(0.31, 0.31, 0.31, 1)
 [node name="WallRight" type="ColorRect" parent="."]
 offset_left = 2326.0
 offset_top = -464.0
-offset_right = 2489.0
+offset_right = 3433.0
 offset_bottom = 4817.0
 color = Color(0.309804, 0.309804, 0.309804, 1)
 

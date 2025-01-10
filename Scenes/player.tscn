@@ -13,8 +13,8 @@ colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_o3i6s"]
 gradient = SubResource("Gradient_pouoi")
-width = 80
-height = 80
+width = 100
+height = 100
 fill = 1
 fill_from = Vector2(0.5, 1)
 fill_to = Vector2(0.5, 0)
@@ -82,7 +82,7 @@ occluder = SubResource("OccluderPolygon2D_m5u5r")
 rotation = 1.5708
 
 [node name="FlashColission" type="CollisionPolygon2D" parent="CharacterBody2D/Flash/FlashArea"]
-scale = Vector2(1.7, 1.7)
+scale = Vector2(2.3, 2.3)
 polygon = PackedVector2Array(0, 0, -100, -150, 100, -150)
 
 [node name="Polygon2D" type="Polygon2D" parent="CharacterBody2D/Flash/FlashArea"]

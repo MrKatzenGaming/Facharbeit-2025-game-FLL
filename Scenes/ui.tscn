@@ -168,6 +168,7 @@ offset_bottom = 381.0
 
 [node name="blur" type="ColorRect" parent="TimeUp"]
 material = SubResource("ShaderMaterial_6pdov")
+layout_mode = 0
 offset_left = -230.0
 offset_top = -340.0
 offset_right = 1697.0
