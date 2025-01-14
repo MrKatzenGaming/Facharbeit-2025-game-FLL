@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://drvdkjrhs30e"]
+[gd_scene load_steps=17 format=3 uid="uid://drvdkjrhs30e"]
 
 [ext_resource type="Script" path="res://scripts/winlogic.gd" id="1_3jcg7"]
 [ext_resource type="Shader" path="res://shaders/pause_menu.gdshader" id="1_lwa1a"]
@@ -22,6 +22,9 @@ shader_parameter/amount = 1.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_jdgnt"]
 font_size = 180
+
+[sub_resource type="LabelSettings" id="LabelSettings_ad0xe"]
+font_size = 32
 
 [node name="Win" type="Control"]
 process_mode = 2
@@ -172,4 +175,35 @@ icon = ExtResource("12_5g0yj")
 flat = true
 expand_icon = true
 
+[node name="blur2" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_6pdov")
+offset_left = -100.0
+offset_top = -18.0
+offset_right = 1827.0
+offset_bottom = 1070.0
+
+[node name="InfoLabel" type="Label" parent="."]
+visible = false
+use_parent_material = true
+layout_mode = 0
+offset_left = 467.0
+offset_top = 307.0
+offset_right = 1323.0
+offset_bottom = 889.0
+text = "Anglerfisch"
+label_settings = SubResource("LabelSettings_ad0xe")
+
+[node name="ButtonBack" type="Button" parent="."]
+visible = false
+use_parent_material = true
+layout_mode = 0
+offset_left = 638.0
+offset_top = 929.0
+offset_right = 1096.0
+offset_bottom = 1058.0
+text = "Zurück"
+
 [connection signal="pressed" from="BacktoMenuButton" to="." method="_on_backto_menu_button_pressed"]
+[connection signal="pressed" from="InfoAnglerfisch" to="." method="_on_info_anglerfisch_pressed"]
+[connection signal="pressed" from="ButtonBack" to="." method="_on_button_back_pressed"]
