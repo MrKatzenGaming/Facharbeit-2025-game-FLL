@@ -2,6 +2,7 @@ extends Node
 
 signal sonar_entered
 signal no_time_left
+signal game_won
 
 signal collected_anglerfisch
 signal collected_feuerqualle
@@ -13,3 +14,4 @@ signal collected_tiefseekoralle
 signal collected_plattenkoralle
 signal collected_seestern
 signal collected_drachenfisch
+signal collected_obj

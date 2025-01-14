@@ -7,6 +7,8 @@ extends Control
 var timer
 var start_time_min = 5
 
+var collected_objs = 0
+
 func _ready() -> void:
 	timer = get_tree().create_timer(start_time_min*60,false)
 	
@@ -20,10 +22,19 @@ func _ready() -> void:
 	SignalBus.collected_plattenkoralle.connect(func():$Plattenkoralle.self_modulate = Color(1,1,1,1))
 	SignalBus.collected_seestern.connect(func():$Seestern.self_modulate = Color(1,1,1,1))
 	SignalBus.collected_drachenfisch.connect(func():$Drachenfisch.self_modulate = Color(1,1,1,1))
+	
+	SignalBus.collected_obj.connect(func():collected_objs += 1)
+	
 
 func _process(_delta: float) -> void:
 	updateScore()
 	updateTimer()
+	
+	if collected_objs >= 10:
+		SignalBus.game_won.emit()
+		get_tree().paused = true
+		$Win.show()
+		
 
 func updateScore() -> void:
 	if PlayerVariables.Debug:

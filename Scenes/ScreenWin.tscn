@@ -1,0 +1,175 @@
+[gd_scene load_steps=16 format=3 uid="uid://drvdkjrhs30e"]
+
+[ext_resource type="Script" path="res://scripts/winlogic.gd" id="1_3jcg7"]
+[ext_resource type="Shader" path="res://shaders/pause_menu.gdshader" id="1_lwa1a"]
+[ext_resource type="Texture2D" uid="uid://du8pn8l0kkfu0" path="res://art/buttonsprites/Anglerfisch.png" id="3_y5o6q"]
+[ext_resource type="Texture2D" uid="uid://drr7h6y2xi0qj" path="res://art/buttonsprites/Blobfisch.png" id="4_eywph"]
+[ext_resource type="Texture2D" uid="uid://far0i6c230i4" path="res://art/buttonsprites/drachenfisch.PNG" id="5_ppe4k"]
+[ext_resource type="Texture2D" uid="uid://cimvercdkhb14" path="res://art/buttonsprites/dumbo-oktopus.PNG" id="6_yvdbr"]
+[ext_resource type="Texture2D" uid="uid://dm6flfgj8cjvi" path="res://art/buttonsprites/koralle.PNG" id="7_u54oi"]
+[ext_resource type="Texture2D" uid="uid://bav8sdqay1dep" path="res://art/buttonsprites/Oktopus.png" id="8_biq4r"]
+[ext_resource type="Texture2D" uid="uid://8h1an7p6yjsm" path="res://art/buttonsprites/plattenkoralle.PNG" id="9_8q6bc"]
+[ext_resource type="Texture2D" uid="uid://iw2lwpfusnc3" path="res://art/buttonsprites/Qualle.png" id="10_ipcc5"]
+[ext_resource type="Texture2D" uid="uid://duiwg1syoisqd" path="res://art/buttonsprites/WandMitSeesternKurz.png" id="11_1fa0h"]
+[ext_resource type="Texture2D" uid="uid://bwno13tlh85jn" path="res://art/buttonsprites/Wels.png" id="12_5g0yj"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_e1p80"]
+light_mode = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6pdov"]
+shader = ExtResource("1_lwa1a")
+shader_parameter/amount = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_jdgnt"]
+font_size = 180
+
+[node name="Win" type="Control"]
+process_mode = 2
+material = SubResource("CanvasItemMaterial_e1p80")
+layout_mode = 3
+anchors_preset = 0
+offset_left = 49.0
+offset_right = 89.0
+offset_bottom = 40.0
+script = ExtResource("1_3jcg7")
+
+[node name="blur" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_6pdov")
+layout_mode = 0
+offset_left = -50.0
+offset_top = -9.0
+offset_right = 1877.0
+offset_bottom = 1079.0
+
+[node name="WinLabel" type="Label" parent="."]
+process_mode = 2
+use_parent_material = true
+layout_mode = 0
+offset_left = 22.0
+offset_top = -48.0
+offset_right = 1861.0
+offset_bottom = 429.0
+text = "Du hast Gewonnen"
+label_settings = SubResource("LabelSettings_jdgnt")
+
+[node name="BacktoMenuButton" type="Button" parent="."]
+use_parent_material = true
+layout_mode = 0
+offset_left = 745.0
+offset_top = 175.0
+offset_right = 1055.0
+offset_bottom = 304.0
+action_mode = 0
+text = "Zurück zum Menü"
+
+[node name="InfoAnglerfisch" type="Button" parent="."]
+use_parent_material = true
+layout_mode = 0
+offset_left = -5.0
+offset_top = 319.0
+offset_right = 219.0
+offset_bottom = 482.0
+disabled = true
+icon = ExtResource("3_y5o6q")
+flat = true
+
+[node name="InfoBlobfisch" type="Button" parent="."]
+use_parent_material = true
+layout_mode = 0
+offset_left = 359.0
+offset_top = 326.0
+offset_right = 642.0
+offset_bottom = 479.0
+disabled = true
+icon = ExtResource("4_eywph")
+flat = true
+expand_icon = true
+
+[node name="InfoDrachenfisch" type="Button" parent="."]
+use_parent_material = true
+offset_left = 1449.0
+offset_top = 341.0
+offset_right = 1732.0
+offset_bottom = 494.0
+disabled = true
+icon = ExtResource("5_ppe4k")
+flat = true
+expand_icon = true
+
+[node name="InfoDumboOktopus" type="Button" parent="."]
+use_parent_material = true
+offset_left = 1075.0
+offset_top = 328.0
+offset_right = 1259.0
+offset_bottom = 518.0
+disabled = true
+icon = ExtResource("6_yvdbr")
+flat = true
+expand_icon = true
+
+[node name="InfoKoralle" type="Button" parent="."]
+use_parent_material = true
+offset_left = 767.0
+offset_top = 313.0
+offset_right = 983.0
+offset_bottom = 524.0
+icon = ExtResource("7_u54oi")
+flat = true
+expand_icon = true
+
+[node name="InfoVampirtintenfisch" type="Button" parent="."]
+use_parent_material = true
+offset_left = 7.0
+offset_top = 584.0
+offset_right = 224.0
+offset_bottom = 861.0
+disabled = true
+icon = ExtResource("8_biq4r")
+flat = true
+expand_icon = true
+
+[node name="InfoPlattenkoralle" type="Button" parent="."]
+use_parent_material = true
+offset_left = 336.0
+offset_top = 607.0
+offset_right = 648.0
+offset_bottom = 841.0
+disabled = true
+icon = ExtResource("9_8q6bc")
+flat = true
+expand_icon = true
+
+[node name="InfoQualle" type="Button" parent="."]
+use_parent_material = true
+offset_left = 750.0
+offset_top = 583.0
+offset_right = 1002.0
+offset_bottom = 874.0
+disabled = true
+icon = ExtResource("10_ipcc5")
+flat = true
+expand_icon = true
+
+[node name="InfoSeestern" type="Button" parent="."]
+use_parent_material = true
+offset_left = 1094.0
+offset_top = 566.0
+offset_right = 1346.0
+offset_bottom = 857.0
+disabled = true
+icon = ExtResource("11_1fa0h")
+flat = true
+expand_icon = true
+
+[node name="InfoKragenhai" type="Button" parent="."]
+use_parent_material = true
+offset_left = 1332.0
+offset_top = 612.0
+offset_right = 1811.0
+offset_bottom = 807.0
+disabled = true
+icon = ExtResource("12_5g0yj")
+flat = true
+expand_icon = true
+
+[connection signal="pressed" from="BacktoMenuButton" to="." method="_on_backto_menu_button_pressed"]

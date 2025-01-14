@@ -1,17 +1,18 @@
-[gd_scene load_steps=22 format=3 uid="uid://wjym08dvo1ir"]
+[gd_scene load_steps=24 format=3 uid="uid://wjym08dvo1ir"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_uwr7c"]
-[ext_resource type="Texture2D" uid="uid://crmq0njp6khdk" path="res://art/sprites/Anglerfisch/Anglerfisch000.png" id="2_ne041"]
-[ext_resource type="Texture2D" uid="uid://dnr77jn3g7l4" path="res://art/sprites/Blobfisch/Blobfisch000.png" id="3_u3jft"]
-[ext_resource type="Texture2D" uid="uid://dm6c104kf4244" path="res://art/sprites/Oktopus/Oktopus000.png" id="4_gwwrh"]
-[ext_resource type="Texture2D" uid="uid://cfswnjw4kyjru" path="res://art/sprites/Qualle/Qualle000.png" id="5_5crvo"]
-[ext_resource type="Texture2D" uid="uid://cn2ads06y2ryb" path="res://art/sprites/Wels/Wels000.png" id="6_vencw"]
-[ext_resource type="Texture2D" uid="uid://chno2hg17xl6a" path="res://art/sprites/koralle.PNG" id="7_2uu17"]
-[ext_resource type="Texture2D" uid="uid://debv0gsuutytm" path="res://art/sprites/plattenkoralle.PNG" id="8_iq6se"]
-[ext_resource type="Texture2D" uid="uid://f2gvfvv7b3k7" path="res://art/sprites/dumbo-oktopus.PNG" id="9_5bosm"]
-[ext_resource type="Texture2D" uid="uid://canl0ks78y5x3" path="res://art/sprites/WandMitSeesternKurz.png" id="9_ilrpe"]
+[ext_resource type="Texture2D" uid="uid://du8pn8l0kkfu0" path="res://art/buttonsprites/Anglerfisch.png" id="2_ipd3d"]
+[ext_resource type="Texture2D" uid="uid://drr7h6y2xi0qj" path="res://art/buttonsprites/Blobfisch.png" id="3_7dhgp"]
+[ext_resource type="Texture2D" uid="uid://bav8sdqay1dep" path="res://art/buttonsprites/Oktopus.png" id="4_xtjlm"]
+[ext_resource type="Texture2D" uid="uid://iw2lwpfusnc3" path="res://art/buttonsprites/Qualle.png" id="5_j08tc"]
+[ext_resource type="Texture2D" uid="uid://bwno13tlh85jn" path="res://art/buttonsprites/Wels.png" id="6_1tbm6"]
+[ext_resource type="Texture2D" uid="uid://dm6flfgj8cjvi" path="res://art/buttonsprites/koralle.PNG" id="7_8k48p"]
+[ext_resource type="Texture2D" uid="uid://8h1an7p6yjsm" path="res://art/buttonsprites/plattenkoralle.PNG" id="8_lklfr"]
 [ext_resource type="Shader" path="res://shaders/pause_menu.gdshader" id="9_pm3hc"]
-[ext_resource type="Texture2D" uid="uid://u8j1fsokimgq" path="res://art/sprites/drachenfisch.PNG" id="11_4rmmo"]
+[ext_resource type="Texture2D" uid="uid://duiwg1syoisqd" path="res://art/buttonsprites/WandMitSeesternKurz.png" id="9_uxtw3"]
+[ext_resource type="Texture2D" uid="uid://cimvercdkhb14" path="res://art/buttonsprites/dumbo-oktopus.PNG" id="10_y5ivx"]
+[ext_resource type="Texture2D" uid="uid://far0i6c230i4" path="res://art/buttonsprites/drachenfisch.PNG" id="11_nxto5"]
+[ext_resource type="PackedScene" uid="uid://drvdkjrhs30e" path="res://scenes/ScreenWin.tscn" id="13_texlb"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_50gdd"]
 light_mode = 1
@@ -43,7 +44,10 @@ shader_parameter/amount = 1.0
 light_mode = 1
 
 [sub_resource type="LabelSettings" id="LabelSettings_jdgnt"]
-font_size = 200
+font_size = 180
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hhhjf"]
+light_mode = 1
 
 [node name="UI" type="Control"]
 material = SubResource("CanvasItemMaterial_50gdd")
@@ -114,69 +118,69 @@ texture = SubResource("GradientTexture2D_5tdw6")
 [node name="Anglerfisch" type="Sprite2D" parent="."]
 self_modulate = Color(0, 0, 0, 1)
 material = SubResource("CanvasItemMaterial_nd7ym")
-position = Vector2(296, 138)
+position = Vector2(232, 54)
 scale = Vector2(0.65, 0.65)
-texture = ExtResource("2_ne041")
+texture = ExtResource("2_ipd3d")
 
 [node name="Blobfisch" type="Sprite2D" parent="."]
 self_modulate = Color(0, 0, 0, 1)
 material = SubResource("CanvasItemMaterial_nd7ym")
-position = Vector2(1104, 34)
+position = Vector2(1044, 54)
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("3_u3jft")
+texture = ExtResource("3_7dhgp")
 
 [node name="Vampirtintenfisch" type="Sprite2D" parent="."]
 self_modulate = Color(0, 0, 0, 1)
 material = SubResource("CanvasItemMaterial_nd7ym")
-position = Vector2(526, 59)
+position = Vector2(526, 53)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("4_gwwrh")
+texture = ExtResource("4_xtjlm")
 
 [node name="Qualle" type="Sprite2D" parent="."]
 self_modulate = Color(0, 0, 0, 1)
 material = SubResource("CanvasItemMaterial_nd7ym")
-position = Vector2(397, 74)
+position = Vector2(394, 56)
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("5_5crvo")
+texture = ExtResource("5_j08tc")
 
 [node name="Kragenhai" type="Sprite2D" parent="."]
 self_modulate = Color(0, 0, 0, 1)
 material = SubResource("CanvasItemMaterial_nd7ym")
-position = Vector2(789, -74)
+position = Vector2(754, 55)
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("6_vencw")
+texture = ExtResource("6_1tbm6")
 
 [node name="Koralle" type="Sprite2D" parent="."]
 self_modulate = Color(0, 0, 0, 1)
 material = SubResource("CanvasItemMaterial_nd7ym")
-position = Vector2(1284, 47)
+position = Vector2(1237, 54)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("7_2uu17")
+texture = ExtResource("7_8k48p")
 
 [node name="Plattenkoralle" type="Sprite2D" parent="."]
 self_modulate = Color(0, 0, 0, 1)
 material = SubResource("CanvasItemMaterial_nd7ym")
-position = Vector2(1372, 101)
+position = Vector2(1385, 55)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("8_iq6se")
+texture = ExtResource("8_lklfr")
 
 [node name="Seestern" type="Sprite2D" parent="."]
 self_modulate = Color(0, 0, 0, 1)
-position = Vector2(1706, 105)
+position = Vector2(1643, 57)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("9_ilrpe")
+texture = ExtResource("9_uxtw3")
 
 [node name="DumboOktopus" type="Sprite2D" parent="."]
 self_modulate = Color(0, 0, 0, 1)
-position = Vector2(1510, 75)
+position = Vector2(1525, 55)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("9_5bosm")
+texture = ExtResource("10_y5ivx")
 
 [node name="Drachenfisch" type="Sprite2D" parent="."]
 self_modulate = Color(0, 0, 0, 1)
-position = Vector2(1805, 64)
+position = Vector2(1802, 54)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("11_4rmmo")
+texture = ExtResource("11_nxto5")
 
 [node name="TimeUp" type="Control" parent="."]
 process_mode = 2
@@ -204,7 +208,8 @@ offset_bottom = 477.0
 text = "Zeit abgelaufen"
 label_settings = SubResource("LabelSettings_jdgnt")
 
-[node name="Button" type="Button" parent="TimeUp"]
+[node name="BacktoMenuButton" type="Button" parent="TimeUp"]
+material = SubResource("CanvasItemMaterial_hhhjf")
 layout_mode = 0
 offset_left = 504.0
 offset_top = 338.0
@@ -213,4 +218,7 @@ offset_bottom = 467.0
 action_mode = 0
 text = "Zurück zum Menü"
 
-[connection signal="pressed" from="TimeUp/Button" to="." method="_on_back_button_pressed"]
+[node name="Win" parent="." instance=ExtResource("13_texlb")]
+visible = false
+
+[connection signal="pressed" from="TimeUp/BacktoMenuButton" to="." method="_on_back_button_pressed"]

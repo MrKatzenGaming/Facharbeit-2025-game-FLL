@@ -37,7 +37,6 @@ size = Vector2(2712, 48)
 script = ExtResource("1_tye50")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="WallTop" type="ColorRect" parent="."]

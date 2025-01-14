@@ -27,6 +27,21 @@ func _physics_process(_delta: float) -> void:
 	if Input.is_key_pressed(KEY_E):
 		$Sonar.activate()
 		
+	if Input.is_key_pressed(KEY_P) && PlayerVariables.Debug:
+		SignalBus.collected_anglerfisch.emit()
+		SignalBus.collected_blobfisch.emit()
+		SignalBus.collected_feuerqualle.emit()
+		SignalBus.collected_dumbo_oktopus.emit()
+		SignalBus.collected_vampirtintenfisch.emit()
+		SignalBus.collected_kragenhai.emit()
+		SignalBus.collected_tiefseekoralle.emit()
+		SignalBus.collected_plattenkoralle.emit()
+		SignalBus.collected_seestern.emit()
+		SignalBus.collected_drachenfisch.emit()
+		
+		for i in range(10):
+			SignalBus.collected_obj.emit()
+		
 	PlayerVariables.pos = self.position
 	
 	move_and_slide()

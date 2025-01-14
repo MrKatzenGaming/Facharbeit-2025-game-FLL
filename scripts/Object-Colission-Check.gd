@@ -29,6 +29,7 @@ func _on_area_entered(area: Area2D) -> void:
 			
 		if parent.is_in_group("Obj"):
 			PlayerVariables.add_score(parent.position.y/100)
+			SignalBus.collected_obj.emit()
 			for group in parent.get_groups():
 				match group:
 					"Anglerfisch":
