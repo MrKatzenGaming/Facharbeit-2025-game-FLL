@@ -21,7 +21,7 @@ size = Vector2(148, 185)
 [node name="Seestern" type="Node2D" groups=["Obj", "Seestern"]]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(27, -7)
+position = Vector2(26, -7)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_wec4i")
 autoplay = "default"

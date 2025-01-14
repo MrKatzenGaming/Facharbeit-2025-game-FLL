@@ -37,6 +37,7 @@ size = Vector2(2712, 48)
 script = ExtResource("1_tye50")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="WallTop" type="ColorRect" parent="."]
@@ -135,7 +136,7 @@ position = Vector2(355, 3602)
 position = Vector2(855, 1787)
 
 [node name="Seestern" parent="Objects" instance=ExtResource("11_mjbh1")]
-position = Vector2(-366, 3089)
+position = Vector2(-367, 3089)
 
 [node name="Koralle" parent="Objects" instance=ExtResource("11_b4ih0")]
 position = Vector2(1258, 3235)
@@ -147,4 +148,4 @@ position = Vector2(58, 2174)
 position = Vector2(1261, 2445)
 
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("1_ft177")]
-position = Vector2(645, 670)
+position = Vector2(831, 603)
