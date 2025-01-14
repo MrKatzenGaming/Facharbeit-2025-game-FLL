@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://debv0gsuutytm"
-path="res://.godot/imported/Pflanze.PNG-fa16db0f5cc7d91d064b3f8ae7f53bd2.ctex"
+uid="uid://u8j1fsokimgq"
+path="res://.godot/imported/drachenfisch.PNG-c053d461036e90d05262dd5df442a308.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/sprites/Pflanze.PNG"
-dest_files=["res://.godot/imported/Pflanze.PNG-fa16db0f5cc7d91d064b3f8ae7f53bd2.ctex"]
+source_file="res://art/sprites/drachenfisch.PNG"
+dest_files=["res://.godot/imported/drachenfisch.PNG-c053d461036e90d05262dd5df442a308.ctex"]
 
 [params]
 

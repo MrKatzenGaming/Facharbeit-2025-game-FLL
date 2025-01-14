@@ -12,14 +12,14 @@ func _ready() -> void:
 	
 	SignalBus.collected_anglerfisch.connect(func():$Anglerfisch.self_modulate = Color(1,1,1,1))
 	SignalBus.collected_feuerqualle.connect(func():$Qualle.self_modulate = Color(1,1,1,1))
-	SignalBus.collected_dumbo_oktopus.connect(func():pass)
+	SignalBus.collected_dumbo_oktopus.connect(func():$DumboOktopus.self_modulate = Color(1,1,1,1))
 	SignalBus.collected_vampirtintenfisch.connect(func():$Vampirtintenfisch.self_modulate = Color(1,1,1,1))
 	SignalBus.collected_kragenhai.connect(func():$Kragenhai.self_modulate = Color(1,1,1,1))
 	SignalBus.collected_blobfisch.connect(func():$Blobfisch.self_modulate = Color(1,1,1,1))
 	SignalBus.collected_tiefseekoralle.connect(func():$Koralle.self_modulate = Color(1,1,1,1))
 	SignalBus.collected_plattenkoralle.connect(func():$Plattenkoralle.self_modulate = Color(1,1,1,1))
-	SignalBus.collected_seestern.connect(func():pass)
-	SignalBus.collected_drachenfisch.connect(func():pass)
+	SignalBus.collected_seestern.connect(func():$Seestern.self_modulate = Color(1,1,1,1))
+	SignalBus.collected_drachenfisch.connect(func():$Drachenfisch.self_modulate = Color(1,1,1,1))
 
 func _process(_delta: float) -> void:
 	updateScore()

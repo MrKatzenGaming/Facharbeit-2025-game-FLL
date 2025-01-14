@@ -89,4 +89,6 @@ func _run_sonar(sonaro) -> void:
 	
 	sonaro.scale = Vector2(0,0)
 	sonaro.process_mode = Node.PROCESS_MODE_DISABLED
+	
+	sonaro.queue_free()
 		

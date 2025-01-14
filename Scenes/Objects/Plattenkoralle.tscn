@@ -1,18 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://dtay02ovcaqer"]
+[gd_scene load_steps=6 format=3 uid="uid://dtay02ovcaqer"]
 
-[ext_resource type="Texture2D" uid="uid://debv0gsuutytm" path="res://art/sprites/Pflanze.PNG" id="1_wxphs"]
+[ext_resource type="Texture2D" uid="uid://debv0gsuutytm" path="res://art/sprites/plattenkoralle.PNG" id="1_wxphs"]
 [ext_resource type="PackedScene" uid="uid://cqnex2mb3n0io" path="res://scenes/sonar.tscn" id="3_48jxw"]
 [ext_resource type="Script" path="res://scripts/Object-Colission-Check.gd" id="10_l1o0t"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v7u47"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wxphs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uj46r"]
 size = Vector2(130, 101)
 
 [node name="Plattenkoralle" type="Node2D" groups=["Obj", "Plattenkoralle"]]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-8, 23)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-10, 24)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_wxphs")
+sprite_frames = SubResource("SpriteFrames_v7u47")
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("10_l1o0t")

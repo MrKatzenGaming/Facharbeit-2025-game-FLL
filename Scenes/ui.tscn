@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://wjym08dvo1ir"]
+[gd_scene load_steps=22 format=3 uid="uid://wjym08dvo1ir"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_uwr7c"]
 [ext_resource type="Texture2D" uid="uid://crmq0njp6khdk" path="res://art/sprites/Anglerfisch/Anglerfisch000.png" id="2_ne041"]
@@ -7,8 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://cfswnjw4kyjru" path="res://art/sprites/Qualle/Qualle000.png" id="5_5crvo"]
 [ext_resource type="Texture2D" uid="uid://cn2ads06y2ryb" path="res://art/sprites/Wels/Wels000.png" id="6_vencw"]
 [ext_resource type="Texture2D" uid="uid://chno2hg17xl6a" path="res://art/sprites/koralle.PNG" id="7_2uu17"]
-[ext_resource type="Texture2D" uid="uid://debv0gsuutytm" path="res://art/sprites/Pflanze.PNG" id="8_iq6se"]
+[ext_resource type="Texture2D" uid="uid://debv0gsuutytm" path="res://art/sprites/plattenkoralle.PNG" id="8_iq6se"]
+[ext_resource type="Texture2D" uid="uid://f2gvfvv7b3k7" path="res://art/sprites/dumbo-oktopus.PNG" id="9_5bosm"]
+[ext_resource type="Texture2D" uid="uid://canl0ks78y5x3" path="res://art/sprites/WandMitSeesternKurz.png" id="9_ilrpe"]
 [ext_resource type="Shader" path="res://shaders/pause_menu.gdshader" id="9_pm3hc"]
+[ext_resource type="Texture2D" uid="uid://u8j1fsokimgq" path="res://art/sprites/drachenfisch.PNG" id="11_4rmmo"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_50gdd"]
 light_mode = 1
@@ -111,51 +114,69 @@ texture = SubResource("GradientTexture2D_5tdw6")
 [node name="Anglerfisch" type="Sprite2D" parent="."]
 self_modulate = Color(0, 0, 0, 1)
 material = SubResource("CanvasItemMaterial_nd7ym")
-position = Vector2(289, 138)
+position = Vector2(296, 138)
 scale = Vector2(0.65, 0.65)
 texture = ExtResource("2_ne041")
 
 [node name="Blobfisch" type="Sprite2D" parent="."]
 self_modulate = Color(0, 0, 0, 1)
 material = SubResource("CanvasItemMaterial_nd7ym")
-position = Vector2(1035, 34)
+position = Vector2(1104, 34)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("3_u3jft")
 
 [node name="Vampirtintenfisch" type="Sprite2D" parent="."]
 self_modulate = Color(0, 0, 0, 1)
 material = SubResource("CanvasItemMaterial_nd7ym")
-position = Vector2(489, 59)
+position = Vector2(526, 59)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("4_gwwrh")
 
 [node name="Qualle" type="Sprite2D" parent="."]
 self_modulate = Color(0, 0, 0, 1)
 material = SubResource("CanvasItemMaterial_nd7ym")
-position = Vector2(375, 74)
+position = Vector2(397, 74)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("5_5crvo")
 
 [node name="Kragenhai" type="Sprite2D" parent="."]
 self_modulate = Color(0, 0, 0, 1)
 material = SubResource("CanvasItemMaterial_nd7ym")
-position = Vector2(735, -76)
+position = Vector2(789, -74)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("6_vencw")
 
 [node name="Koralle" type="Sprite2D" parent="."]
 self_modulate = Color(0, 0, 0, 1)
 material = SubResource("CanvasItemMaterial_nd7ym")
-position = Vector2(1181, 47)
+position = Vector2(1284, 47)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("7_2uu17")
 
 [node name="Plattenkoralle" type="Sprite2D" parent="."]
 self_modulate = Color(0, 0, 0, 1)
 material = SubResource("CanvasItemMaterial_nd7ym")
-position = Vector2(1267, 101)
+position = Vector2(1372, 101)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("8_iq6se")
+
+[node name="Seestern" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(1706, 105)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("9_ilrpe")
+
+[node name="DumboOktopus" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(1510, 75)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("9_5bosm")
+
+[node name="Drachenfisch" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(1805, 64)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("11_4rmmo")
 
 [node name="TimeUp" type="Control" parent="."]
 process_mode = 2

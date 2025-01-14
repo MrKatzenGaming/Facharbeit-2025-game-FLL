@@ -42,8 +42,8 @@ size = Vector2(275, 199.5)
 light_mode = 1
 
 [sub_resource type="Gradient" id="Gradient_x5fq1"]
-offsets = PackedFloat32Array(0, 0.538732, 0.545775, 1)
-colors = PackedColorArray(0, 1, 0, 0.501961, 0.054902, 1, 0.054902, 0.501961, 0.156863, 0.156863, 0.156863, 0, 1, 1, 1, 0)
+offsets = PackedFloat32Array(0.545775, 0.546784, 0.602339, 0.634503)
+colors = PackedColorArray(0.156863, 0.156863, 0.156863, 0, 0, 1, 0, 0.501961, 0.054902, 1, 0.054902, 0.501961, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_xnxds"]
 gradient = SubResource("Gradient_x5fq1")

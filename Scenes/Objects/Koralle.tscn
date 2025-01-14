@@ -1,18 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgxif0dhpuq48"]
+[gd_scene load_steps=6 format=3 uid="uid://dgxif0dhpuq48"]
 
 [ext_resource type="Texture2D" uid="uid://chno2hg17xl6a" path="res://art/sprites/koralle.PNG" id="1_sih8m"]
 [ext_resource type="Script" path="res://scripts/Object-Colission-Check.gd" id="2_542i7"]
 [ext_resource type="PackedScene" uid="uid://cqnex2mb3n0io" path="res://scenes/sonar.tscn" id="3_3boud"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s8y44"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sih8m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uj46r"]
 size = Vector2(91, 79)
 
 [node name="Koralle" type="Node2D" groups=["Koralle", "Obj"]]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(38, -33)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(38, -34)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_sih8m")
+sprite_frames = SubResource("SpriteFrames_s8y44")
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("2_542i7")

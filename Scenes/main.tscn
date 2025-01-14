@@ -1,16 +1,20 @@
-[gd_scene load_steps=16 format=3 uid="uid://cpo6nyqj26pf8"]
+[gd_scene load_steps=20 format=3 uid="uid://cpo6nyqj26pf8"]
 
 [ext_resource type="PackedScene" uid="uid://c0atf75bwaldk" path="res://scenes/player.tscn" id="1_ft177"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_tye50"]
 [ext_resource type="Texture2D" uid="uid://c2dodl3m5ehyh" path="res://art/sprites/Sky.png" id="2_kvtur"]
 [ext_resource type="Texture2D" uid="uid://bxmpciykgboan" path="res://art/sprites/Floor-Sand.png" id="3_1ibjo"]
 [ext_resource type="PackedScene" uid="uid://bdbxhaox6ucy1" path="res://scenes/Objects/Anglerfisch.tscn" id="3_4b4uf"]
+[ext_resource type="Texture2D" uid="uid://c1muw26hfj0yy" path="res://art/sprites/background.JPEG" id="3_a31vs"]
 [ext_resource type="PackedScene" uid="uid://b78ajil6fj2kp" path="res://scenes/Objects/Qualle.tscn" id="6_kdbff"]
 [ext_resource type="PackedScene" uid="uid://b4dulc3yxgntg" path="res://scenes/Objects/Kragenhai.tscn" id="7_4mr2o"]
 [ext_resource type="PackedScene" uid="uid://xu3g8n5jhnm7" path="res://scenes/Objects/Blobfisch.tscn" id="8_5t8ih"]
 [ext_resource type="PackedScene" uid="uid://cueqbtinfdjlk" path="res://scenes/Objects/Vampirtintenfisch.tscn" id="9_r8wjk"]
 [ext_resource type="PackedScene" uid="uid://dtay02ovcaqer" path="res://scenes/Objects/Plattenkoralle.tscn" id="10_pvreo"]
 [ext_resource type="PackedScene" uid="uid://dgxif0dhpuq48" path="res://scenes/Objects/Koralle.tscn" id="11_b4ih0"]
+[ext_resource type="PackedScene" uid="uid://bjnloeue347" path="res://scenes/Objects/Seestern.tscn" id="11_mjbh1"]
+[ext_resource type="PackedScene" uid="uid://csqyqkcotq8pf" path="res://scenes/Objects/Drachenfisch.tscn" id="13_t3hqf"]
+[ext_resource type="PackedScene" uid="uid://vo88hpqbdlk4" path="res://scenes/Objects/DumboOktopus.tscn" id="14_omfpi"]
 
 [sub_resource type="Gradient" id="Gradient_h6e7l"]
 offsets = PackedFloat32Array(0, 0.608187, 1)
@@ -53,11 +57,17 @@ energy = 1.5
 texture = SubResource("GradientTexture2D_seari")
 
 [node name="Background" type="ColorRect" parent="."]
+visible = false
 offset_left = -897.0
 offset_top = 518.0
 offset_right = 3838.0
 offset_bottom = 4792.0
 color = Color(0, 0, 1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1172, 2636.5)
+scale = Vector2(3.33092, 2.351)
+texture = ExtResource("3_a31vs")
 
 [node name="WallLeft" type="ColorRect" parent="."]
 offset_left = -843.0
@@ -103,13 +113,6 @@ position = Vector2(1249.88, 51)
 scale = Vector2(2.60425, 1.67)
 texture = ExtResource("3_1ibjo")
 
-[node name="ColorRect2" type="ColorRect" parent="."]
-visible = false
-offset_left = -1794.0
-offset_top = -1224.0
-offset_right = 2543.0
-offset_bottom = 1657.0
-
 [node name="Objects" type="Node2D" parent="."]
 position = Vector2(428, 282)
 
@@ -117,10 +120,10 @@ position = Vector2(428, 282)
 position = Vector2(1145, 3876)
 
 [node name="Qualle" parent="Objects" instance=ExtResource("6_kdbff")]
-position = Vector2(214, 1436)
+position = Vector2(-109, 1140)
 
 [node name="Kragenhai" parent="Objects" instance=ExtResource("7_4mr2o")]
-position = Vector2(31, 2644)
+position = Vector2(515, 2725)
 
 [node name="Blobfisch" parent="Objects" instance=ExtResource("8_5t8ih")]
 position = Vector2(1288, 1136)
@@ -129,10 +132,19 @@ position = Vector2(1288, 1136)
 position = Vector2(355, 3602)
 
 [node name="Vampirtintenfisch" parent="Objects" instance=ExtResource("9_r8wjk")]
-position = Vector2(1017, 1854)
+position = Vector2(855, 1787)
+
+[node name="Seestern" parent="Objects" instance=ExtResource("11_mjbh1")]
+position = Vector2(-366, 3089)
 
 [node name="Koralle" parent="Objects" instance=ExtResource("11_b4ih0")]
-position = Vector2(1054, 2756)
+position = Vector2(1258, 3235)
+
+[node name="Drachenfisch" parent="Objects" instance=ExtResource("13_t3hqf")]
+position = Vector2(58, 2174)
+
+[node name="DumboOktopus" parent="Objects" instance=ExtResource("14_omfpi")]
+position = Vector2(1261, 2445)
 
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("1_ft177")]
 position = Vector2(645, 670)

@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://5h2rut21gpjl" path="res://art/sprites/Anglerfisch/Anglerfisch013.png" id="14_em0nl"]
 [ext_resource type="Texture2D" uid="uid://ddy7uqholli7k" path="res://art/sprites/Anglerfisch/Anglerfisch014.png" id="15_n2o7d"]
 [ext_resource type="Texture2D" uid="uid://bfbq77b48b0vb" path="res://art/sprites/Anglerfisch/Anglerfisch015.png" id="16_clixu"]
-[ext_resource type="PackedScene" path="res://scenes/sonar.tscn" id="18_3ri0a"]
+[ext_resource type="PackedScene" uid="uid://cqnex2mb3n0io" path="res://scenes/sonar.tscn" id="18_3ri0a"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_431rg"]
 animations = [{

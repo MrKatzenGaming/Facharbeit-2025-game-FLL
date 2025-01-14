@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://vo88hpqbdlk4"]
+
+[ext_resource type="Texture2D" uid="uid://f2gvfvv7b3k7" path="res://art/sprites/dumbo-oktopus.PNG" id="1_pbyru"]
+[ext_resource type="Script" path="res://scripts/Object-Colission-Check.gd" id="2_516io"]
+[ext_resource type="PackedScene" uid="uid://cqnex2mb3n0io" path="res://scenes/sonar.tscn" id="3_00mmd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wec4i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pbyru")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uj46r"]
+size = Vector2(94, 105)
+
+[node name="DumboOktopus" type="Node2D" groups=["DumboOktopus", "Obj"]]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(6, -1)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_wec4i")
+autoplay = "default"
+frame_progress = 0.45502
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_516io")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(20, -15.5)
+shape = SubResource("RectangleShape2D_uj46r")
+
+[node name="Sonar" parent="." instance=ExtResource("3_00mmd")]
+position = Vector2(18, -12)
+
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
