@@ -18,7 +18,7 @@ light_mode = 1
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6pdov"]
 shader = ExtResource("1_lwa1a")
-shader_parameter/amount = 1.0
+shader_parameter/amount = 2.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_jdgnt"]
 font_size = 180
@@ -90,6 +90,7 @@ expand_icon = true
 
 [node name="InfoDrachenfisch" type="Button" parent="."]
 use_parent_material = true
+layout_mode = 0
 offset_left = 1449.0
 offset_top = 341.0
 offset_right = 1732.0
@@ -101,6 +102,7 @@ expand_icon = true
 
 [node name="InfoDumboOktopus" type="Button" parent="."]
 use_parent_material = true
+layout_mode = 0
 offset_left = 1075.0
 offset_top = 328.0
 offset_right = 1259.0
@@ -112,6 +114,7 @@ expand_icon = true
 
 [node name="InfoKoralle" type="Button" parent="."]
 use_parent_material = true
+layout_mode = 0
 offset_left = 767.0
 offset_top = 313.0
 offset_right = 983.0
@@ -122,6 +125,7 @@ expand_icon = true
 
 [node name="InfoVampirtintenfisch" type="Button" parent="."]
 use_parent_material = true
+layout_mode = 0
 offset_left = 7.0
 offset_top = 584.0
 offset_right = 224.0
@@ -133,6 +137,7 @@ expand_icon = true
 
 [node name="InfoPlattenkoralle" type="Button" parent="."]
 use_parent_material = true
+layout_mode = 0
 offset_left = 336.0
 offset_top = 607.0
 offset_right = 648.0
@@ -144,6 +149,7 @@ expand_icon = true
 
 [node name="InfoQualle" type="Button" parent="."]
 use_parent_material = true
+layout_mode = 0
 offset_left = 750.0
 offset_top = 583.0
 offset_right = 1002.0
@@ -155,6 +161,7 @@ expand_icon = true
 
 [node name="InfoSeestern" type="Button" parent="."]
 use_parent_material = true
+layout_mode = 0
 offset_left = 1094.0
 offset_top = 566.0
 offset_right = 1346.0
@@ -166,6 +173,7 @@ expand_icon = true
 
 [node name="InfoKragenhai" type="Button" parent="."]
 use_parent_material = true
+layout_mode = 0
 offset_left = 1332.0
 offset_top = 612.0
 offset_right = 1811.0
@@ -178,21 +186,33 @@ expand_icon = true
 [node name="blur2" type="ColorRect" parent="."]
 visible = false
 material = SubResource("ShaderMaterial_6pdov")
+layout_mode = 0
 offset_left = -100.0
 offset_top = -18.0
 offset_right = 1827.0
 offset_bottom = 1070.0
 
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -55.0
+offset_top = -5.0
+offset_right = 1901.0
+offset_bottom = 1100.0
+color = Color(0, 0, 0, 0.407843)
+
 [node name="InfoLabel" type="Label" parent="."]
 visible = false
 use_parent_material = true
 layout_mode = 0
-offset_left = 467.0
-offset_top = 307.0
-offset_right = 1323.0
-offset_bottom = 889.0
+offset_left = -48.0
+offset_top = 1.0
+offset_right = 1874.0
+offset_bottom = 1082.0
 text = "Anglerfisch"
 label_settings = SubResource("LabelSettings_ad0xe")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ButtonBack" type="Button" parent="."]
 visible = false
@@ -206,4 +226,13 @@ text = "Zurück"
 
 [connection signal="pressed" from="BacktoMenuButton" to="." method="_on_backto_menu_button_pressed"]
 [connection signal="pressed" from="InfoAnglerfisch" to="." method="_on_info_anglerfisch_pressed"]
+[connection signal="pressed" from="InfoBlobfisch" to="." method="_on_info_blobfisch_pressed"]
+[connection signal="pressed" from="InfoDrachenfisch" to="." method="_on_info_drachenfisch_pressed"]
+[connection signal="pressed" from="InfoDumboOktopus" to="." method="_on_info_dumbo_oktopus_pressed"]
+[connection signal="pressed" from="InfoKoralle" to="." method="_on_info_koralle_pressed"]
+[connection signal="pressed" from="InfoVampirtintenfisch" to="." method="_on_info_vampirtintenfisch_pressed"]
+[connection signal="pressed" from="InfoPlattenkoralle" to="." method="_on_info_plattenkoralle_pressed"]
+[connection signal="pressed" from="InfoQualle" to="." method="_on_info_qualle_pressed"]
+[connection signal="pressed" from="InfoSeestern" to="." method="_on_info_seestern_pressed"]
+[connection signal="pressed" from="InfoKragenhai" to="." method="_on_info_kragenhai_pressed"]
 [connection signal="pressed" from="ButtonBack" to="." method="_on_button_back_pressed"]
