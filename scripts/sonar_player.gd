@@ -15,12 +15,14 @@ func activate() -> void:
 		
 		cooldown.start()
 		PlayerVariables.AbilityCount -= 1
+		_run()
 		
-		for i in range(5):
-			var s = self.duplicate()
-			add_child(s)
-			_run(s)
-			await get_tree().create_timer(1).timeout
+		#for i in range(5):
+			#var s = self.duplicate()
+			#add_child(s)
+			#_run(s)
+			#await get_tree().create_timer(1).timeout
+		
 
 		
 func _on_solar_entered() -> void:
@@ -35,13 +37,13 @@ func _on_solar_entered() -> void:
 	#self.process_mode = Node.PROCESS_MODE_DISABLED
 	pass
 	
-func _run(s) -> void:
-	s.process_mode = Node.PROCESS_MODE_INHERIT
-	s.self_modulate.a = 0.5
-	s.scale = Vector2(0.0,0.0)
+func _run() -> void:
+	self.process_mode = Node.PROCESS_MODE_INHERIT
+	self.self_modulate.a = 0.5
+	self.scale = Vector2(0.0,0.0)
 	timer = 1000
-	while s.scale.x < 8:
-		s.scale += Vector2(0.05,0.05)
+	while self.scale.x < 8:
+		self.scale += Vector2(0.05,0.05)
 		timer -=1
 		await get_tree().create_timer(0.01).timeout
 		
@@ -49,9 +51,9 @@ func _run(s) -> void:
 	timer2 = 25
 	while timer2 >= 1:
 		timer2 -= 1
-		s.self_modulate.a -= 0.05
+		self.self_modulate.a -= 0.05
 		await get_tree().create_timer(0.01).timeout
 	
-	s.scale = Vector2(0,0)
-	s.process_mode = Node.PROCESS_MODE_DISABLED
-	s.queue_free()
+	self.scale = Vector2(0,0)
+	self.process_mode = Node.PROCESS_MODE_DISABLED
+	self.queue_free()

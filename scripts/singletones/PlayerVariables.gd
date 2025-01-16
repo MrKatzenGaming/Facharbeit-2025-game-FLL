@@ -1,6 +1,6 @@
 extends Node
 
-var Debug:bool = true
+var Debug:bool = false
 
 var Score:float = 0
 var AbilityCount:int = 999999999 if Debug else 3
