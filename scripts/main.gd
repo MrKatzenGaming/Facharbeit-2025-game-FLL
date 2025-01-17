@@ -17,6 +17,7 @@ func _ready() -> void:
 	var diff = (wall_bottom.position.y-2*wall_bottom.size.y) - wall_top.position.y
 	factor = 1/diff
 	
+	PlayerVariables.AbilityCount = 3
 	#rand.randomize()
 	#
 	#for i in $Objects.get_children():

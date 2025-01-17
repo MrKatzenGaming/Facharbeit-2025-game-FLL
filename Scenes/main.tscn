@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c2dodl3m5ehyh" path="res://art/sprites/Sky.png" id="2_kvtur"]
 [ext_resource type="Texture2D" uid="uid://bxmpciykgboan" path="res://art/sprites/Floor-Sand.png" id="3_1ibjo"]
 [ext_resource type="PackedScene" uid="uid://bdbxhaox6ucy1" path="res://scenes/Objects/Anglerfisch.tscn" id="3_4b4uf"]
-[ext_resource type="Texture2D" uid="uid://diipe3jj160ex" path="res://art/sprites/BG.jpg" id="3_dqv3w"]
+[ext_resource type="Texture2D" uid="uid://cdso6in7wwuq6" path="res://art/sprites/BG.JPEG" id="3_b3x5f"]
 [ext_resource type="PackedScene" uid="uid://b78ajil6fj2kp" path="res://scenes/Objects/Qualle.tscn" id="6_kdbff"]
 [ext_resource type="PackedScene" uid="uid://b4dulc3yxgntg" path="res://scenes/Objects/Kragenhai.tscn" id="7_4mr2o"]
 [ext_resource type="PackedScene" uid="uid://xu3g8n5jhnm7" path="res://scenes/Objects/Blobfisch.tscn" id="8_5t8ih"]
@@ -66,9 +66,9 @@ offset_bottom = 4792.0
 color = Color(0, 0, 1, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1172, 2301.98)
+position = Vector2(1172, 2512.98)
 scale = Vector2(3.33092, 2.69248)
-texture = ExtResource("3_dqv3w")
+texture = ExtResource("3_b3x5f")
 
 [node name="WallLeft" type="ColorRect" parent="."]
 offset_left = -843.0
@@ -148,4 +148,4 @@ position = Vector2(58, 2174)
 position = Vector2(1261, 2445)
 
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("1_ft177")]
-position = Vector2(106, 397)
+position = Vector2(1056, 397)

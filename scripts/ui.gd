@@ -24,25 +24,33 @@ func _ready() -> void:
 	SignalBus.collected_seestern.connect(func():$Seestern.self_modulate = Color(1,1,1,1))
 	SignalBus.collected_drachenfisch.connect(func():$Drachenfisch.self_modulate = Color(1,1,1,1))
 	
-	SignalBus.collected_obj.connect(func():collected_objs += 1)
 	
 
+func startgame() -> void:
+	SignalBus.game_start = 0
+	$Intro.show()
+	get_tree().paused = true
+	
+func _on_play_pressed() -> void:
+	$Intro.hide()
+	get_tree().paused = false
+	
 func _process(_delta: float) -> void:
+	if SignalBus.game_start:
+		startgame()
 	updateScore()
 	updateTimer()
 	
-	if collected_objs >= 10:
+	if SignalBus.collected_obj >= 10:
 		SignalBus.game_won.emit()
 		get_tree().paused = true
 		$Win.show()
 		
 	#var fac:float = 902/3930
 	var fac = 0.22951654
-	print(fac)
 	var p: float = PlayerVariables.pos.y * fac
 	color_rect.position.y = p
-	print(p)
-		
+	
 
 func updateScore() -> void:
 	if PlayerVariables.Debug:
@@ -64,6 +72,10 @@ func updateTimer() -> void:
 		SignalBus.no_time_left.emit()
 		get_tree().paused = true
 		time_up.show()
+		if SignalBus.collected_obj < 3:
+			$TimeUp/Outro.text = ""
+		elif SignalBus.collected_obj >= 7:
+			$TimeUp/Outro.text = "Wow, du hast fast alle Tiere gefunden. Herzlichen Glückwunsch! Versuche es erneut und finde auch die restlichen Tiere um deine Mission erfolgreich zu beenden. \n\nHier kannst du nun die gefundenen Tiere weiter erforschen und noch mehr über sie lernen!"
 		
 		
 func _on_back_button_pressed() -> void:
@@ -74,3 +86,4 @@ func _on_back_button_pressed() -> void:
 func _on_button_pressed() -> void:
 	$Win.show()
 	$Win/WinLabel.text = ""
+	$Win/Outro.hide()

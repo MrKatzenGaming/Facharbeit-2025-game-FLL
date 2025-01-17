@@ -3,6 +3,8 @@ extends Node
 signal sonar_entered
 signal no_time_left
 signal game_won
+var game_start:bool = 0
+var game_end: bool = 0
 
 signal collected_anglerfisch
 signal collected_feuerqualle
@@ -14,4 +16,4 @@ signal collected_tiefseekoralle
 signal collected_plattenkoralle
 signal collected_seestern
 signal collected_drachenfisch
-signal collected_obj
+var collected_obj:int = 0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ddud1desavdfa"]
+[gd_scene load_steps=20 format=3 uid="uid://drvdkjrhs30e"]
 
 [ext_resource type="Script" path="res://scripts/winlogic.gd" id="1_3jcg7"]
 [ext_resource type="Shader" path="res://shaders/pause_menu.gdshader" id="1_lwa1a"]
@@ -25,6 +25,15 @@ font_size = 180
 
 [sub_resource type="LabelSettings" id="LabelSettings_ad0xe"]
 font_size = 32
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_moqpy"]
+light_mode = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_wfv8v"]
+font_size = 52
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_yycfd"]
+light_mode = 1
 
 [node name="Win" type="Control"]
 process_mode = 2
@@ -224,6 +233,34 @@ offset_right = 1096.0
 offset_bottom = 1058.0
 text = "Zurück"
 
+[node name="Outro" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_6pdov")
+offset_left = -100.0
+offset_top = -18.0
+offset_right = 1827.0
+offset_bottom = 1070.0
+
+[node name="Label" type="Label" parent="Outro"]
+material = SubResource("CanvasItemMaterial_moqpy")
+layout_mode = 0
+offset_left = 612.0
+offset_top = 216.0
+offset_right = 1368.0
+offset_bottom = 513.0
+text = "Wow, du hast alle Tiere gefunden und deine Mission erfolgreich beendet. Herzlichen Glückwunsch. 
+"
+label_settings = SubResource("LabelSettings_wfv8v")
+autowrap_mode = 2
+
+[node name="Continue" type="Button" parent="Outro"]
+material = SubResource("CanvasItemMaterial_yycfd")
+layout_mode = 0
+offset_left = 773.0
+offset_top = 625.0
+offset_right = 1060.0
+offset_bottom = 743.0
+text = "Weiter"
+
 [connection signal="pressed" from="BacktoMenuButton" to="." method="_on_backto_menu_button_pressed"]
 [connection signal="pressed" from="InfoAnglerfisch" to="." method="_on_info_anglerfisch_pressed"]
 [connection signal="pressed" from="InfoBlobfisch" to="." method="_on_info_blobfisch_pressed"]
@@ -236,3 +273,4 @@ text = "Zurück"
 [connection signal="pressed" from="InfoSeestern" to="." method="_on_info_seestern_pressed"]
 [connection signal="pressed" from="InfoKragenhai" to="." method="_on_info_kragenhai_pressed"]
 [connection signal="pressed" from="ButtonBack" to="." method="_on_button_back_pressed"]
+[connection signal="pressed" from="Outro/Continue" to="." method="_on_continue_pressed"]
