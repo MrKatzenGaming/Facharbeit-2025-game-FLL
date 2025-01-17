@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://wjym08dvo1ir"]
+[gd_scene load_steps=28 format=3 uid="uid://wjym08dvo1ir"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_uwr7c"]
 [ext_resource type="Texture2D" uid="uid://du8pn8l0kkfu0" path="res://art/buttonsprites/Anglerfisch.png" id="2_ipd3d"]
@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://duiwg1syoisqd" path="res://art/buttonsprites/WandMitSeesternKurz.png" id="9_uxtw3"]
 [ext_resource type="Texture2D" uid="uid://cimvercdkhb14" path="res://art/buttonsprites/dumbo-oktopus.PNG" id="10_y5ivx"]
 [ext_resource type="Texture2D" uid="uid://far0i6c230i4" path="res://art/buttonsprites/drachenfisch.PNG" id="11_nxto5"]
-[ext_resource type="PackedScene" uid="uid://drvdkjrhs30e" path="res://scenes/ScreenWin.tscn" id="13_texlb"]
+[ext_resource type="PackedScene" uid="uid://ddud1desavdfa" path="res://scenes/ScreenWin.tscn" id="13_texlb"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_50gdd"]
 light_mode = 1
@@ -36,6 +36,15 @@ fill_to = Vector2(0.5, 0)
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nd7ym"]
 light_mode = 1
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nhagw"]
+light_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_socgb"]
+light_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7dmlk"]
+light_mode = 1
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6pdov"]
 shader = ExtResource("9_pm3hc")
 shader_parameter/amount = 1.0
@@ -47,6 +56,9 @@ light_mode = 1
 font_size = 180
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hhhjf"]
+light_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_kde8k"]
 light_mode = 1
 
 [node name="UI" type="Control"]
@@ -115,6 +127,13 @@ offset_right = 97.0
 offset_bottom = 1054.0
 texture = SubResource("GradientTexture2D_5tdw6")
 
+[node name="ColorRect" type="ColorRect" parent="NinePatchRect"]
+layout_mode = 0
+offset_top = 902.0
+offset_right = 75.0
+offset_bottom = 914.0
+color = Color(0, 0, 0, 1)
+
 [node name="Anglerfisch" type="Sprite2D" parent="."]
 self_modulate = Color(0, 0, 0, 1)
 material = SubResource("CanvasItemMaterial_nd7ym")
@@ -166,18 +185,21 @@ texture = ExtResource("8_lklfr")
 
 [node name="Seestern" type="Sprite2D" parent="."]
 self_modulate = Color(0, 0, 0, 1)
+material = SubResource("CanvasItemMaterial_nhagw")
 position = Vector2(1643, 57)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("9_uxtw3")
 
 [node name="DumboOktopus" type="Sprite2D" parent="."]
 self_modulate = Color(0, 0, 0, 1)
+material = SubResource("CanvasItemMaterial_socgb")
 position = Vector2(1525, 55)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("10_y5ivx")
 
 [node name="Drachenfisch" type="Sprite2D" parent="."]
 self_modulate = Color(0, 0, 0, 1)
+material = SubResource("CanvasItemMaterial_7dmlk")
 position = Vector2(1802, 54)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("11_nxto5")
@@ -218,7 +240,17 @@ offset_bottom = 467.0
 action_mode = 0
 text = "Zurück zum Menü"
 
+[node name="Button" type="Button" parent="TimeUp"]
+material = SubResource("CanvasItemMaterial_kde8k")
+layout_mode = 0
+offset_left = 553.0
+offset_top = 590.0
+offset_right = 757.0
+offset_bottom = 693.0
+text = "Übersicht"
+
 [node name="Win" parent="." instance=ExtResource("13_texlb")]
 visible = false
 
 [connection signal="pressed" from="TimeUp/BacktoMenuButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="TimeUp/Button" to="." method="_on_button_pressed"]

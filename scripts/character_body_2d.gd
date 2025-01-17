@@ -27,6 +27,9 @@ func _physics_process(_delta: float) -> void:
 	if Input.is_key_pressed(KEY_E):
 		$Sonar.activate()
 		
+	if Input.is_key_pressed(KEY_O):
+		print(PlayerVariables.pos)
+		
 	if Input.is_key_pressed(KEY_P) && PlayerVariables.Debug:
 		SignalBus.collected_anglerfisch.emit()
 		SignalBus.collected_blobfisch.emit()

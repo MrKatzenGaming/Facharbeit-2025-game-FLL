@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://drvdkjrhs30e"]
+[gd_scene load_steps=17 format=3 uid="uid://ddud1desavdfa"]
 
 [ext_resource type="Script" path="res://scripts/winlogic.gd" id="1_3jcg7"]
 [ext_resource type="Shader" path="res://shaders/pause_menu.gdshader" id="1_lwa1a"]

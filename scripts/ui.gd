@@ -3,9 +3,10 @@ extends Control
 @onready var score_label: Label = $ScoreLabel
 @onready var timer_label: Label = $TimerLabel
 @onready var time_up: Control = $TimeUp
+@onready var color_rect: ColorRect = $NinePatchRect/ColorRect
 
 var timer
-var start_time_min = 5
+var start_time_min = 2
 
 var collected_objs = 0
 
@@ -35,6 +36,13 @@ func _process(_delta: float) -> void:
 		get_tree().paused = true
 		$Win.show()
 		
+	#var fac:float = 902/3930
+	var fac = 0.22951654
+	print(fac)
+	var p: float = PlayerVariables.pos.y * fac
+	color_rect.position.y = p
+	print(p)
+		
 
 func updateScore() -> void:
 	if PlayerVariables.Debug:
@@ -61,3 +69,8 @@ func updateTimer() -> void:
 func _on_back_button_pressed() -> void:
 	get_tree().paused = 0
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+
+
+func _on_button_pressed() -> void:
+	$Win.show()
+	$Win/WinLabel.text = ""

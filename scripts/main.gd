@@ -17,16 +17,16 @@ func _ready() -> void:
 	var diff = (wall_bottom.position.y-2*wall_bottom.size.y) - wall_top.position.y
 	factor = 1/diff
 	
-	rand.randomize()
-	
-	for i in $Objects.get_children():
-		var randx = rand.randi_range(rangex[0],rangex[1])
-		var randy = rand.randi_range(rangey1[0],rangey1[1])
-		rand.seed = rand.randi_range(randx,randy)
-		print_debug('randx: ' + str(randx) + ' randy: ' + str(randy))
-		if i != $Objects/Seestern:
-			i.position.x = randx
-		i.position.y = randy
+	#rand.randomize()
+	#
+	#for i in $Objects.get_children():
+		#var randx = rand.randi_range(rangex[0],rangex[1])
+		#var randy = rand.randi_range(rangey1[0],rangey1[1])
+		#rand.seed = rand.randi_range(randx,randy)
+		#print_debug('randx: ' + str(randx) + ' randy: ' + str(randy))
+		#if i != $Objects/Seestern:
+			#i.position.x = randx
+		#i.position.y = randy
 		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
