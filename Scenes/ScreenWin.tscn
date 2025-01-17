@@ -75,6 +75,7 @@ action_mode = 0
 text = "Zurück zum Menü"
 
 [node name="InfoAnglerfisch" type="Button" parent="."]
+self_modulate = Color(0, 0, 0, 1)
 use_parent_material = true
 layout_mode = 0
 offset_left = -5.0
@@ -86,6 +87,7 @@ icon = ExtResource("3_y5o6q")
 flat = true
 
 [node name="InfoBlobfisch" type="Button" parent="."]
+self_modulate = Color(0, 0, 0, 1)
 use_parent_material = true
 layout_mode = 0
 offset_left = 359.0
@@ -98,6 +100,7 @@ flat = true
 expand_icon = true
 
 [node name="InfoDrachenfisch" type="Button" parent="."]
+self_modulate = Color(0, 0, 0, 1)
 use_parent_material = true
 layout_mode = 0
 offset_left = 1449.0
@@ -110,6 +113,7 @@ flat = true
 expand_icon = true
 
 [node name="InfoDumboOktopus" type="Button" parent="."]
+self_modulate = Color(0, 0, 0, 1)
 use_parent_material = true
 layout_mode = 0
 offset_left = 1075.0
@@ -122,17 +126,20 @@ flat = true
 expand_icon = true
 
 [node name="InfoKoralle" type="Button" parent="."]
+self_modulate = Color(0, 0, 0, 1)
 use_parent_material = true
 layout_mode = 0
 offset_left = 767.0
 offset_top = 313.0
 offset_right = 983.0
 offset_bottom = 524.0
+disabled = true
 icon = ExtResource("7_u54oi")
 flat = true
 expand_icon = true
 
 [node name="InfoVampirtintenfisch" type="Button" parent="."]
+self_modulate = Color(0, 0, 0, 1)
 use_parent_material = true
 layout_mode = 0
 offset_left = 7.0
@@ -145,6 +152,7 @@ flat = true
 expand_icon = true
 
 [node name="InfoPlattenkoralle" type="Button" parent="."]
+self_modulate = Color(0, 0, 0, 1)
 use_parent_material = true
 layout_mode = 0
 offset_left = 336.0
@@ -157,6 +165,7 @@ flat = true
 expand_icon = true
 
 [node name="InfoQualle" type="Button" parent="."]
+self_modulate = Color(0, 0, 0, 1)
 use_parent_material = true
 layout_mode = 0
 offset_left = 750.0
@@ -169,6 +178,7 @@ flat = true
 expand_icon = true
 
 [node name="InfoSeestern" type="Button" parent="."]
+self_modulate = Color(0, 0, 0, 1)
 use_parent_material = true
 layout_mode = 0
 offset_left = 1094.0
@@ -181,6 +191,7 @@ flat = true
 expand_icon = true
 
 [node name="InfoKragenhai" type="Button" parent="."]
+self_modulate = Color(0, 0, 0, 1)
 use_parent_material = true
 layout_mode = 0
 offset_left = 1332.0
@@ -214,14 +225,19 @@ color = Color(0, 0, 0, 0.407843)
 visible = false
 use_parent_material = true
 layout_mode = 0
-offset_left = -48.0
+offset_left = 734.0
 offset_top = 1.0
 offset_right = 1874.0
 offset_bottom = 1082.0
 text = "Anglerfisch"
 label_settings = SubResource("LabelSettings_ad0xe")
-horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="InfoSprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(333, 555)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("12_5g0yj")
 
 [node name="ButtonBack" type="Button" parent="."]
 visible = false
@@ -235,6 +251,7 @@ text = "Zurück"
 
 [node name="Outro" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_6pdov")
+layout_mode = 0
 offset_left = -100.0
 offset_top = -18.0
 offset_right = 1827.0

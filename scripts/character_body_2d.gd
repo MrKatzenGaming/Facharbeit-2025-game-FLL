@@ -42,9 +42,10 @@ func _physics_process(_delta: float) -> void:
 		SignalBus.collected_seestern.emit()
 		SignalBus.collected_drachenfisch.emit()
 		
-		for i in range(8):
+	if Input.is_key_pressed(KEY_O) && PlayerVariables.Debug:
+		for i in range(10):
 			SignalBus.collected_obj += 1
-		
+	
 	PlayerVariables.pos = self.position
 	
 	move_and_slide()

@@ -43,6 +43,7 @@ func _process(_delta: float) -> void:
 	
 	if SignalBus.collected_obj >= 10:
 		SignalBus.game_won.emit()
+		SignalBus.collected_obj = 0
 		get_tree().paused = true
 		$Win.show()
 		
@@ -67,6 +68,9 @@ func updateTimer() -> void:
 		timer_label.text = "" + str(timemin) + ":" + str(timesec)
 	else:
 		timer_label.text = "" + str(timemin) + ":0" + str(timesec)
+		
+	if time <= 30:
+		warning()
 	
 	if time == 0:
 		SignalBus.no_time_left.emit()
@@ -82,6 +86,10 @@ func _on_back_button_pressed() -> void:
 	get_tree().paused = 0
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
+func warning() -> void:
+	$"30swarning".show()
+	await get_tree().create_timer(3).timeout
+	$"30swarning".hide()
 
 func _on_button_pressed() -> void:
 	$Win.show()

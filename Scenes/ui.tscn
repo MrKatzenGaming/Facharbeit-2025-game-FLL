@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://wjym08dvo1ir"]
+[gd_scene load_steps=34 format=3 uid="uid://wjym08dvo1ir"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_uwr7c"]
 [ext_resource type="Texture2D" uid="uid://du8pn8l0kkfu0" path="res://art/buttonsprites/Anglerfisch.png" id="2_ipd3d"]
@@ -20,6 +20,10 @@ light_mode = 1
 [sub_resource type="LabelSettings" id="LabelSettings_yb85d"]
 font_size = 57
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5nm85"]
+font_size = 256
+font_color = Color(1, 0, 0, 0.490196)
 
 [sub_resource type="LabelSettings" id="LabelSettings_3sc4s"]
 
@@ -113,11 +117,23 @@ color = Color(0.66, 0.66, 0.66, 1)
 
 [node name="TimerLabel" type="Label" parent="."]
 use_parent_material = true
-layout_mode = 0
 offset_right = 120.0
 offset_bottom = 111.0
 text = "5:00"
 label_settings = SubResource("LabelSettings_yb85d")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="30swarning" type="Label" parent="."]
+visible = false
+use_parent_material = true
+layout_mode = 0
+offset_left = 369.0
+offset_top = 398.0
+offset_right = 1461.0
+offset_bottom = 747.0
+text = "noch 30s"
+label_settings = SubResource("LabelSettings_5nm85")
 horizontal_alignment = 1
 vertical_alignment = 1
 
