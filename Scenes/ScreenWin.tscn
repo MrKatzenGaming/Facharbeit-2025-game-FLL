@@ -235,6 +235,7 @@ vertical_alignment = 1
 
 [node name="InfoSprite" type="Sprite2D" parent="."]
 visible = false
+use_parent_material = true
 position = Vector2(333, 555)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("12_5g0yj")

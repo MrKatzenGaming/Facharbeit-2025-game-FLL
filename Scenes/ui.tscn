@@ -117,6 +117,7 @@ color = Color(0.66, 0.66, 0.66, 1)
 
 [node name="TimerLabel" type="Label" parent="."]
 use_parent_material = true
+layout_mode = 0
 offset_right = 120.0
 offset_bottom = 111.0
 text = "5:00"

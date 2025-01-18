@@ -69,7 +69,7 @@ func updateTimer() -> void:
 	else:
 		timer_label.text = "" + str(timemin) + ":0" + str(timesec)
 		
-	if time <= 30:
+	if time <= 30 and time >= 29.5:
 		warning()
 	
 	if time == 0:
