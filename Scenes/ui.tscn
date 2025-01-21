@@ -303,18 +303,18 @@ visible = false
 visible = false
 material = SubResource("ShaderMaterial_6pdov")
 layout_mode = 0
-offset_left = 6.0
+offset_left = -18.0
 offset_top = -4.0
 offset_right = 1933.0
 offset_bottom = 1084.0
 
 [node name="ColorRect" type="ColorRect" parent="Intro"]
 layout_mode = 0
-offset_left = -35.0
+offset_left = -116.0
 offset_top = -27.0
 offset_right = 1965.0
 offset_bottom = 1119.0
-color = Color(0, 0, 0, 0.290196)
+color = Color(0, 0, 0, 0.462745)
 
 [node name="Introsatz" type="Label" parent="Intro"]
 material = SubResource("CanvasItemMaterial_sjnlc")
@@ -323,7 +323,8 @@ offset_left = 142.0
 offset_top = 134.0
 offset_right = 1917.0
 offset_bottom = 1051.0
-text = "Hi, du musst der neue Forscher sein, richtig? Herzlich willkommen auf der Mission Deep Learning. Unser heutiges Ziel ist es, möglichst viele Tiere und Pflanzenarten in der Tiefsee zu fotografieren und diese Bilder zu analysieren, um mehr über die Tiere und Pflanzen in der Tiefsee zu erfahren. 
+text = "Hi, du musst der neue Forscher sein, richtig?
+Herzlich willkommen auf der Mission Deep Learning. Unser heutiges Ziel ist es, möglichst viele Tiere und Pflanzenarten in der Tiefsee zu fotografieren und diese Bilder zu analysieren, um mehr über die Tiere und Pflanzen in der Tiefsee zu erfahren. 
 Na dann fertig machen zum abtauchen und viel Erfolg!
 "
 label_settings = SubResource("LabelSettings_un8gi")

@@ -42,8 +42,9 @@ func _process(_delta: float) -> void:
 	updateTimer()
 	
 	if SignalBus.collected_obj >= 10:
-		SignalBus.game_won.emit()
 		SignalBus.collected_obj = 0
+		await get_tree().create_timer(0.001).timeout
+		SignalBus.game_won.emit()
 		get_tree().paused = true
 		$Win.show()
 		
@@ -73,6 +74,7 @@ func updateTimer() -> void:
 		warning()
 	
 	if time == 0:
+		SignalBus.collected_obj = 0
 		SignalBus.no_time_left.emit()
 		get_tree().paused = true
 		time_up.show()
