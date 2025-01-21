@@ -45,6 +45,13 @@ offset_right = 89.0
 offset_bottom = 40.0
 script = ExtResource("1_3jcg7")
 
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -65.0
+offset_top = -6.0
+offset_right = 1891.0
+offset_bottom = 1099.0
+color = Color(0, 0, 0, 0.407843)
+
 [node name="blur" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_6pdov")
 layout_mode = 0
@@ -232,6 +239,7 @@ offset_bottom = 1082.0
 text = "Anglerfisch"
 label_settings = SubResource("LabelSettings_ad0xe")
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="InfoSprite" type="Sprite2D" parent="."]
 visible = false
@@ -253,9 +261,9 @@ text = "Zurück"
 [node name="Outro" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_6pdov")
 layout_mode = 0
-offset_left = -100.0
+offset_left = -72.0
 offset_top = -18.0
-offset_right = 1827.0
+offset_right = 1855.0
 offset_bottom = 1070.0
 
 [node name="Label" type="Label" parent="Outro"]

@@ -43,6 +43,7 @@ func _on_button_back_pressed() -> void:
 	button_back.hide()
 	color_rect.hide()
 	$InfoSprite.hide()
+	$InfoSprite.scale = Vector2(1,1)
 
 func _on_continue_pressed() -> void:
 	$Outro.hide()
@@ -54,6 +55,7 @@ func _on_info_anglerfisch_pressed() -> void:
 	color_rect.show()
 	label.text = StaticData.infoData["Anglerfisch"]
 	$InfoSprite.texture = load("res://art/buttonsprites/Anglerfisch.png")
+	$InfoSprite.scale = Vector2(2,2)
 	$InfoSprite.show()
 
 func _on_info_blobfisch_pressed() -> void:
@@ -90,6 +92,7 @@ func _on_info_koralle_pressed() -> void:
 	color_rect.show()
 	label.text = StaticData.infoData["Tiefseekoralle"]
 	$InfoSprite.texture = load("res://art/buttonsprites/koralle.PNG")
+	$InfoSprite.scale = Vector2(2,2)
 	$InfoSprite.show()
 
 func _on_info_vampirtintenfisch_pressed() -> void:
@@ -117,6 +120,7 @@ func _on_info_qualle_pressed() -> void:
 	color_rect.show()
 	label.text = StaticData.infoData["Feuerqualle"]
 	$InfoSprite.texture = load("res://art/buttonsprites/Qualle.png")
+	$InfoSprite.scale = Vector2(1.5,1.5)
 	$InfoSprite.show()
 
 func _on_info_seestern_pressed() -> void:
@@ -126,6 +130,7 @@ func _on_info_seestern_pressed() -> void:
 	color_rect.show()
 	label.text = StaticData.infoData["Tiefsee-Seestern"]
 	$InfoSprite.texture = load("res://art/buttonsprites/WandMitSeesternKurz.png")
+	$InfoSprite.scale = Vector2(1.5,1.5)
 	$InfoSprite.show()
 
 func _on_info_kragenhai_pressed() -> void:

@@ -244,6 +244,14 @@ offset_top = 341.0
 offset_right = 265.0
 offset_bottom = 381.0
 
+[node name="ColorRect" type="ColorRect" parent="TimeUp"]
+layout_mode = 0
+offset_left = -344.0
+offset_top = -372.0
+offset_right = 1737.0
+offset_bottom = 774.0
+color = Color(0, 0, 0, 0.462745)
+
 [node name="blur" type="ColorRect" parent="TimeUp"]
 material = SubResource("ShaderMaterial_6pdov")
 layout_mode = 0
@@ -251,6 +259,7 @@ offset_left = -230.0
 offset_top = -340.0
 offset_right = 1697.0
 offset_bottom = 748.0
+color = Color(0, 0, 0, 1)
 
 [node name="TimeUpLabel" type="Label" parent="TimeUp"]
 process_mode = 2

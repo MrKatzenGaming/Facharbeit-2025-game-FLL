@@ -43,7 +43,7 @@ func _process(_delta: float) -> void:
 	
 	if SignalBus.collected_obj >= 10:
 		SignalBus.collected_obj = 0
-		await get_tree().create_timer(0.001).timeout
+		await get_tree().create_timer(0.5).timeout
 		SignalBus.game_won.emit()
 		get_tree().paused = true
 		$Win.show()
@@ -74,15 +74,19 @@ func updateTimer() -> void:
 		warning()
 	
 	if time == 0:
-		SignalBus.collected_obj = 0
 		SignalBus.no_time_left.emit()
+		
+		if SignalBus.collected_obj >= 7:
+			$TimeUp/Outro.text = "Wow, du hast fast alle Tiere gefunden. Herzlichen Glückwunsch! Versuche es erneut und finde auch die restlichen Tiere um deine Mission erfolgreich zu beenden. \n\nHier kannst du nun die gefundenen Tiere weiter erforschen und noch mehr über sie lernen!"
+		elif SignalBus.collected_obj < 3:
+			$TimeUp/Outro.text = ""
+		
+		SignalBus.collected_obj = 0
+		
 		get_tree().paused = true
 		time_up.show()
-		if SignalBus.collected_obj < 3:
-			$TimeUp/Outro.text = ""
-		elif SignalBus.collected_obj >= 7:
-			$TimeUp/Outro.text = "Wow, du hast fast alle Tiere gefunden. Herzlichen Glückwunsch! Versuche es erneut und finde auch die restlichen Tiere um deine Mission erfolgreich zu beenden. \n\nHier kannst du nun die gefundenen Tiere weiter erforschen und noch mehr über sie lernen!"
-		
+
+
 		
 func _on_back_button_pressed() -> void:
 	get_tree().paused = 0
