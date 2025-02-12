@@ -56,4 +56,4 @@ func _run() -> void:
 	
 	self.scale = Vector2(0,0)
 	self.process_mode = Node.PROCESS_MODE_DISABLED
-	self.queue_free()
+	#self.queue_free()
