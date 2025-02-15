@@ -101,3 +101,4 @@ func _on_button_pressed() -> void:
 	$Win.show()
 	$Win/WinLabel.text = ""
 	$Win/Outro.hide()
+	$Win.showall()
