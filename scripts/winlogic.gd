@@ -32,6 +32,35 @@ func _ready() -> void:
 	SignalBus.collected_seestern.connect(func():$InfoSeestern.self_modulate = Color(1,1,1,1))
 	SignalBus.collected_drachenfisch.connect(func():$InfoDrachenfisch.self_modulate = Color(1,1,1,1))
 	
+	hideall()
+	
+func hideall() -> void:
+	$WinLabel.hide()
+	$BacktoMenuButton.hide()
+	$InfoAnglerfisch.hide()
+	$InfoBlobfisch.hide()
+	$InfoDrachenfisch.hide()
+	$InfoDumboOktopus.hide()
+	$InfoKoralle.hide()
+	$InfoVampirtintenfisch.hide()
+	$InfoPlattenkoralle.hide()
+	$InfoQualle.hide()
+	$InfoSeestern.hide()
+	$InfoKragenhai.hide()
+	
+func showall() -> void:
+	$WinLabel.show()
+	$BacktoMenuButton.show()
+	$InfoAnglerfisch.show()
+	$InfoBlobfisch.show()
+	$InfoDrachenfisch.show()
+	$InfoDumboOktopus.show()
+	$InfoKoralle.show()
+	$InfoVampirtintenfisch.show()
+	$InfoPlattenkoralle.show()
+	$InfoQualle.show()
+	$InfoSeestern.show()
+	$InfoKragenhai.show()
 
 func _on_backto_menu_button_pressed() -> void:
 	get_tree().paused = 0
@@ -47,6 +76,7 @@ func _on_button_back_pressed() -> void:
 
 func _on_continue_pressed() -> void:
 	$Outro.hide()
+	showall()
 
 func _on_info_anglerfisch_pressed() -> void:
 	label.show()
