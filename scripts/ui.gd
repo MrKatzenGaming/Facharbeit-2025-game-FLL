@@ -98,6 +98,7 @@ func warning() -> void:
 	$"30swarning".hide()
 
 func _on_button_pressed() -> void:
+	$TimeUp.hide()
 	$Win.show()
 	$Win/WinLabel.text = ""
 	$Win/Outro.hide()
